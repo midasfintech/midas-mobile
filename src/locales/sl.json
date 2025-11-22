@@ -68,8 +68,16 @@
       "welcome": "Dobrodošli!",
       "userId": "ID uporabnika:",
       "email": "E-pošta:",
+      "showcase": "Razstavni prostor",
+      "profile": "Profil"
+    },
+    "settings": {
+      "welcome": "Dobrodošli!",
+      "userId": "ID uporabnika:",
+      "email": "E-pošta:",
       "signOut": "Odjava",
-      "showcase": "Showcase"
+      "dob": "Datum rojstva:",
+      "edit": "Uredi ✏️"
     }
   }
 }

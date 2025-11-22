@@ -12,11 +12,11 @@ export default function AppHome() {
 
   async function handleSignOut() {
     await signOut();
-    router.replace('/auth/sign-in');
+    // router.replace('/auth/sign-in');
   }
 
   function handleOpenShowcase() {
-    router.push('/showcase');
+    // router.push('/showcase');
   }
 
   return (
@@ -34,15 +34,15 @@ export default function AppHome() {
             <Text variant="muted" className="mb-1">{t('app.home.email')}</Text>
             <Text className="font-semibold">{session?.user?.email}</Text>
           </View>
+
+          <Button onPress={handleOpenShowcase} className="mt-4">
+            <Text className="text-primary-foreground font-semibold">{t('app.home.profile')}</Text>
+          </Button>
         </View>
       </View>
 
       <Button onPress={handleOpenShowcase} className="mt-4">
         <Text className="text-primary-foreground font-semibold">{t('app.home.showcase')}</Text>
-      </Button>
-
-      <Button onPress={handleSignOut} className="mt-4">
-        <Text className="text-primary-foreground font-semibold">{t('app.home.signOut')}</Text>
       </Button>
     </View>
   );

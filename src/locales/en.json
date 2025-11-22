@@ -68,8 +68,16 @@
       "welcome": "Welcome!",
       "userId": "User ID:",
       "email": "Email:",
+      "showcase": "Showcase",
+      "profile": "Profile"
+    },
+    "settings": {
+      "title": "Settings",
+      "userId": "User ID:",
+      "email": "Email:",
       "signOut": "Sign Out",
-      "showcase": "Showcase"
+      "dob": "Date of Birth:",
+      "edit": "Edit ✏️"
     }
   }
 }

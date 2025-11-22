@@ -85,7 +85,7 @@ export default function HomeScreen() {
         <View className="flex-1 p-6 gap-6">
           <View className="gap-2">
             <Text className="text-3xl font-bold text-foreground">
-              {t("home.title")}
+              Test
             </Text>
             <Text className="text-base text-muted-foreground">
               {t("home.description")}
