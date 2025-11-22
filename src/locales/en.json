@@ -77,11 +77,8 @@
   },
   "app": {
     "home": {
-      "welcome": "Welcome!",
-      "userId": "User ID:",
-      "email": "Email:",
-      "showcase": "Showcase",
-      "profile": "Profile"
+      "title": "We open the door to smarter financial decisions",
+      "subtitle": "Change your attitude towards money: learn how investors think, how to avoid scams, and how to build something concrete from small things."
     },
     "profile": {
       "title": "Profile",
