@@ -45,19 +45,19 @@ export default function AppLayout() {
     <ScreenContainer>
       <NativeTabs>
         <NativeTabs.Trigger name="index">
-          <Icon src={<VectorIcon family={LucideIcon} name="house" />} />
+          <Icon selectedColor={"#f0b100"} src={<VectorIcon family={LucideIcon} name="house" />} />
           <Label hidden />
         </NativeTabs.Trigger>
         <NativeTabs.Trigger name="learning">
-          <Icon src={<VectorIcon family={LucideIcon} name="learning" />} />
+          <Icon selectedColor={"#f0b100"} src={<VectorIcon family={LucideIcon} name="learning" />} />
           <Label hidden />
         </NativeTabs.Trigger>
         <NativeTabs.Trigger name="plan">
-          <Icon src={<VectorIcon family={LucideIcon} name="chart" />} />
+          <Icon selectedColor={"#f0b100"} src={<VectorIcon family={LucideIcon} name="chart" />} />
           <Label hidden />
         </NativeTabs.Trigger>
         <NativeTabs.Trigger name="profile">
-          <Icon src={<VectorIcon family={LucideIcon} name="user" />} />
+          <Icon selectedColor={"#f0b100"} src={<VectorIcon family={LucideIcon} name="user" />} />
           <Label hidden />
         </NativeTabs.Trigger>
       </NativeTabs>
