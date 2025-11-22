@@ -109,6 +109,10 @@ export default function Profile() {
     router.replace("/auth/sign-in");
   }
 
+  function handleOpenSettings() {
+    router.navigate("/settings")
+  }
+
   async function handleDeleteAccount() {
     Alert.alert(
       t("app.profile.deleteConfirmTitle"),
@@ -181,7 +185,7 @@ export default function Profile() {
             </Text>
           </View>
           <Pressable
-            onPress={() => router.push("/app/settings")}
+            onPress={handleOpenSettings}
             className="bg-card border border-border rounded-lg p-3 active:opacity-70"
           >
             <Icon as={SettingsIcon} className="text-foreground size-6" />

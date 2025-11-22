@@ -45,6 +45,7 @@ function RootLayoutContent() {
               <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="app" />
                 <Stack.Screen name="auth" />
+                <Stack.Screen name="settings" />
               </Stack>
               <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />
               <PortalHost />
