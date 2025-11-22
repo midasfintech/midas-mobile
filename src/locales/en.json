@@ -68,7 +68,8 @@
       "welcome": "Welcome!",
       "userId": "User ID:",
       "email": "Email:",
-      "signOut": "Sign Out"
+      "signOut": "Sign Out",
+      "showcase": "Showcase"
     }
   }
 }

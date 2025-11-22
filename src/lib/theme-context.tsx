@@ -1,5 +1,5 @@
 import { getFromLocalStorage, setInLocalStorage, STORAGE_KEYS } from '@/lib/storage';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { useColorScheme as useRNColorScheme } from 'react-native';
 
 export type ColorScheme = 'light' | 'dark' | 'system';

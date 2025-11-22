@@ -2,8 +2,8 @@ import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { useAuthContext } from '@/lib/providers/auth-provider';
 import { useRouter } from 'expo-router';
-import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { View } from 'react-native';
 
 export default function AppHome() {
   const { t } = useTranslation();
@@ -13,6 +13,10 @@ export default function AppHome() {
   async function handleSignOut() {
     await signOut();
     router.replace('/auth/sign-in');
+  }
+
+  function handleOpenShowcase() {
+    router.push('/showcase');
   }
 
   return (
@@ -32,6 +36,10 @@ export default function AppHome() {
           </View>
         </View>
       </View>
+
+      <Button onPress={handleOpenShowcase} className="mt-4">
+        <Text className="text-primary-foreground font-semibold">{t('app.home.showcase')}</Text>
+      </Button>
 
       <Button onPress={handleSignOut} className="mt-4">
         <Text className="text-primary-foreground font-semibold">{t('app.home.signOut')}</Text>

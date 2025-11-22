@@ -68,7 +68,8 @@
       "welcome": "Dobrodošli!",
       "userId": "ID uporabnika:",
       "email": "E-pošta:",
-      "signOut": "Odjava"
+      "signOut": "Odjava",
+      "showcase": "Showcase"
     }
   }
 }

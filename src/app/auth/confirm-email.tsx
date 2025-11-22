@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { MailIcon } from '@/lib/icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Mail } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { Linking, Platform, View } from 'react-native';
 
@@ -35,7 +35,7 @@ export default function ConfirmEmail() {
         {/* Icon Section */}
         <View className="items-center gap-4">
           <View className="w-24 h-24 bg-primary/10 rounded-full items-center justify-center">
-            <Mail
+            <MailIcon
               size={48}
               color={colorScheme === 'dark' ? '#f0b100' : '#f0b100'}
               strokeWidth={1.5}
