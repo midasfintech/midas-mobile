@@ -1,0 +1,74 @@
+{
+  "common": {
+    "welcome": "Dobrodošli",
+    "language": "Jezik",
+    "settings": "Nastavitve"
+  },
+  "home": {
+    "title": "Dobrodošli v Expo Boilerplate",
+    "description": "To je primer internacionalizacije z uporabo i18next",
+    "changeLanguage": "Spremeni jezik",
+    "changeTheme": "Spremeni temo"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Izberi jezik",
+    "english": "Angleščina",
+    "slovenian": "Slovenščina"
+  },
+  "themeSwitcher": {
+    "selectTheme": "Izberi temo",
+    "light": "Svetla",
+    "dark": "Temna",
+    "system": "Sistem"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Dobrodošli nazaj",
+      "subtitle": "Prijavite se za nadaljevanje v Midas",
+      "email": "E-pošta",
+      "emailPlaceholder": "email@naslov.si",
+      "password": "Geslo",
+      "passwordPlaceholder": "Vnesite geslo",
+      "signInButton": "Prijava",
+      "signingIn": "Prijavljanje...",
+      "noAccount": "Nimate računa?",
+      "signUpLink": "Registracija",
+      "errorTitle": "Napaka"
+    },
+    "signUp": {
+      "title": "Ustvarite račun",
+      "subtitle": "Registrirajte se za začetek uporabe Midas",
+      "email": "E-pošta",
+      "emailPlaceholder": "email@naslov.si",
+      "password": "Geslo",
+      "passwordPlaceholder": "Ustvarite geslo",
+      "confirmPassword": "Potrdite geslo",
+      "confirmPasswordPlaceholder": "Potrdite geslo",
+      "signUpButton": "Registracija",
+      "creatingAccount": "Ustvarjanje računa...",
+      "haveAccount": "Že imate račun?",
+      "signInLink": "Prijava",
+      "errorTitle": "Napaka",
+      "successTitle": "Uspešno",
+      "passwordMismatch": "Gesli se ne ujemata",
+      "verificationEmail": "Preverite svoj e-poštni nabiralnik za potrditev!"
+    },
+    "confirmEmail": {
+      "title": "Preverite e-pošto",
+      "subtitle": "Poslali smo potrditveno povezavo na",
+      "instructions": "Kliknite povezavo v e-pošti, da potrdite svoj račun in dokončate postopek registracije.",
+      "didntReceive": "Niste prejeli e-pošte?",
+      "checkSpam": "Preverite mapo z neželeno pošto ali se obrnite na podporo, če potrebujete pomoč.",
+      "openMailApp": "Odpri e-poštno aplikacijo",
+      "backToLogin": "Nazaj na prijavo"
+    }
+  },
+  "app": {
+    "home": {
+      "welcome": "Dobrodošli!",
+      "userId": "ID uporabnika:",
+      "email": "E-pošta:",
+      "signOut": "Odjava"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "language": "Language",
+    "settings": "Settings"
+  },
+  "home": {
+    "title": "Welcome to Expo Boilerplate",
+    "description": "This is an example of internationalization using i18next",
+    "changeLanguage": "Change Language",
+    "changeTheme": "Change Theme"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "slovenian": "Slovenian"
+  },
+  "themeSwitcher": {
+    "selectTheme": "Select Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to continue to Midas",
+      "email": "Email",
+      "emailPlaceholder": "email@address.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "signInButton": "Sign In",
+      "signingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign Up",
+      "errorTitle": "Error"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "subtitle": "Sign up to get started with Midas",
+      "email": "Email",
+      "emailPlaceholder": "email@address.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "signUpButton": "Sign Up",
+      "creatingAccount": "Creating account...",
+      "haveAccount": "Already have an account?",
+      "signInLink": "Sign In",
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "passwordMismatch": "Passwords do not match",
+      "verificationEmail": "Please check your inbox for email verification!"
+    },
+    "confirmEmail": {
+      "title": "Check Your Email",
+      "subtitle": "We've sent a confirmation link to",
+      "instructions": "Click the link in the email to verify your account and complete the registration process.",
+      "didntReceive": "Didn't receive the email?",
+      "checkSpam": "Check your spam folder or contact support if you need help.",
+      "openMailApp": "Open Mail App",
+      "backToLogin": "Back to Sign In"
+    }
+  },
+  "app": {
+    "home": {
+      "welcome": "Welcome!",
+      "userId": "User ID:",
+      "email": "Email:",
+      "signOut": "Sign Out"
+    }
+  }
+}
