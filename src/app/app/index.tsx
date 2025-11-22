@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { useGetProfile } from '@/lib/api-query/use-get-profile';
 import { useAuthContext } from '@/lib/providers/auth-provider';
