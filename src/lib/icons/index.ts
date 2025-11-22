@@ -5,4 +5,5 @@ export { ChevronRightIcon } from './chevron-right';
 export { ChevronUpIcon } from './chevron-up';
 export { MailIcon } from './mail';
 export { MoonIcon } from './moon';
+export { SettingsIcon } from './settings';
 export { SunIcon } from './sun';

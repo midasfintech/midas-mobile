@@ -90,7 +90,7 @@
       "income": "Mesečni dohodek:",
       "signOut": "Odjava",
       "dob": "Datum rojstva:",
-      "edit": "Uredi",
+      "edit": "Uredi profil",
       "save": "Shrani spremembe",
       "saving": "Shranjevanje...",
       "cancel": "Prekliči",
@@ -101,7 +101,11 @@
       "errorTitle": "Napaka",
       "successTitle": "Uspešno",
       "saveSuccess": "Profil uspešno posodobljen",
-      "saveError": "Neuspešna posodobitev profila"
+      "saveError": "Neuspešna posodobitev profila",
+      "editMode": "Urejanje profila",
+      "viewMode": "Način ogledovanja",
+      "accountActions": "Dejanja računa",
+      "version": "Verzija 1.0.0"
     },
     "assessment": {
       "title": "Ocenjevanje",
@@ -113,6 +117,17 @@
       "submitting": "Oddajanje...",
       "loadError": "Napaka pri nalaganju vprašanj ocenjevanja."
     }
+  },
+  "settings": {
+    "appearance": {
+      "title": "Videz",
+      "theme": "Tema"
+    },
+    "language": {
+      "title": "Jezik",
+      "select": "Izberi jezik"
+    },
+    "backToProfile": "Nazaj na profil"
   },
   "employmentStatus": {
     "employed": "Zaposlen",
