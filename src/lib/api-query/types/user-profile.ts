@@ -9,7 +9,6 @@ export const userProfileSchema = z.object({
   date_of_birth: z.string().nullable(),
   net_monthly_income: z.number().nullable(),
   employment: z.enum(EmploymentStatuses).nullable(),
-  completed_onboarding: z.boolean().nullable(),
   knowledge: z.enum(KnowledgeLevels).nullable(),
   monthly_investment_amount: z.number().nullable(),
   ethical_investing: z.boolean().nullable(),

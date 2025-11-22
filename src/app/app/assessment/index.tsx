@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { MultiSelectTile } from "@/components/ui/multi-select-tile";
 import { Text } from "@/components/ui/text";
 import { useGetAssessment } from "@/lib/api-query/use-get-assessment";
+import { useGetProfile } from "@/lib/api-query/use-get-profile";
+import { useAuthContext } from "@/lib/providers/auth-provider";
 import { supabase } from "@/lib/supabase";
+import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,7 +17,16 @@ export default function AssessmentPage() {
   const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { session } = useAuthContext();
   const router = useRouter();
+  const { data: userProfile } = useGetProfile({ id: session?.user?.id });
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    if (userProfile && userProfile.data?.knowledge !== null) {
+      router.replace("/app");
+    }
+  }, [userProfile, router]);
 
   // Initialize selectedAnswers array when assessment loads
   useEffect(() => {
@@ -77,7 +89,8 @@ export default function AssessmentPage() {
       console.error("Error submitting assessment:", error);
       // TODO: Show error toast/alert
     } finally {
-      router.push("/app");
+      queryClient.invalidateQueries();
+      router.replace("/app");
       setIsSubmitting(false);
     }
   };
@@ -93,9 +106,7 @@ export default function AssessmentPage() {
   if (!assessment || !currentQuestion) {
     return (
       <View className="flex-1 items-center justify-center px-6">
-        <Text className="text-foreground">
-          {t("app.assessment.loadError")}
-        </Text>
+        <Text className="text-foreground">{t("app.assessment.loadError")}</Text>
       </View>
     );
   }
@@ -150,7 +161,7 @@ export default function AssessmentPage() {
             <Button
               onPress={handlePrevious}
               variant="outline"
-              className="flex-1"
+              className="w-1/2"
               size={"lg"}
             >
               <Text>{t("app.assessment.previous")}</Text>
@@ -161,7 +172,7 @@ export default function AssessmentPage() {
             <Button
               onPress={handleNext}
               disabled={!isCurrentQuestionAnswered}
-              className="flex-1"
+              className=" w-1/2"
               size={"lg"}
             >
               <Text>{t("app.assessment.next")}</Text>
@@ -170,11 +181,13 @@ export default function AssessmentPage() {
             <Button
               onPress={handleSubmit}
               disabled={!allQuestionsAnswered || isSubmitting}
-              className="flex-1"
+              className=" w-1/2"
               size={"lg"}
             >
               <Text>
-                {isSubmitting ? t("app.assessment.submitting") : t("app.assessment.submit")}
+                {isSubmitting
+                  ? t("app.assessment.submitting")
+                  : t("app.assessment.submit")}
               </Text>
             </Button>
           )}

@@ -18,7 +18,8 @@ export default function AppHome() {
   }
 
   useEffect(() => {
-    if (userProfile && !userProfile.data?.completed_onboarding) {
+    console.log('User Profile:', userProfile);
+    if (userProfile && userProfile.data?.knowledge === null) {
       router.replace('/app/assessment');
     }
   }, [userProfile, router]);
