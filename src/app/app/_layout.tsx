@@ -6,12 +6,13 @@ export default function AppLayout() {
 
   // Redirect to sign-in if not authenticated
   if (!session) {
-    return <Redirect href="/auth/sign-in" />;
+    //return <Redirect href="/auth/sign-in" />;
   }
 
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
+      <Stack.Screen name="profile" />
     </Stack>
   );
 }

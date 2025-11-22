@@ -10,13 +10,11 @@ export default function AppHome() {
   const { session, signOut } = useAuthContext();
   const router = useRouter();
 
-  async function handleSignOut() {
-    await signOut();
-    // router.replace('/auth/sign-in');
-  }
-
   function handleOpenShowcase() {
     // router.push('/showcase');
+  }
+  function handleOpenProfile() {
+    router.push('/app/profile');
   }
 
   return (
@@ -35,7 +33,7 @@ export default function AppHome() {
             <Text className="font-semibold">{session?.user?.email}</Text>
           </View>
 
-          <Button onPress={handleOpenShowcase} className="mt-4">
+          <Button onPress={handleOpenProfile} className="mt-4">
             <Text className="text-primary-foreground font-semibold">{t('app.home.profile')}</Text>
           </Button>
         </View>

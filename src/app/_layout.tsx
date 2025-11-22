@@ -30,7 +30,7 @@ function RootLayoutContent() {
         <AuthProvider>
           <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? 'dark bg-background' : 'bg-background'}>
             <Stack screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="home" />
+              <Stack.Screen name="app" />
               <Stack.Screen name="auth" />
             </Stack>
             <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />

@@ -71,10 +71,12 @@
       "showcase": "Razstavni prostor",
       "profile": "Profil"
     },
-    "settings": {
+    "profile": {
       "welcome": "Dobrodošli!",
-      "userId": "ID uporabnika:",
-      "email": "E-pošta:",
+      "name": "Ime:",
+      "surname": "Priimek:",
+      "status": "Zaposlitveni status:",
+      "income": "Mesečni dohodek:",
       "signOut": "Odjava",
       "dob": "Datum rojstva:",
       "edit": "Uredi ✏️"

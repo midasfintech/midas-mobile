@@ -71,10 +71,12 @@
       "showcase": "Showcase",
       "profile": "Profile"
     },
-    "settings": {
-      "title": "Settings",
-      "userId": "User ID:",
-      "email": "Email:",
+    "profile": {
+      "title": "Profile",
+      "name": "First Name:",
+      "surname": "Last Name:",
+      "status": "Employment Status:",
+      "income": "Monthly Income:",
       "signOut": "Sign Out",
       "dob": "Date of Birth:",
       "edit": "Edit ✏️"

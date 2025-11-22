@@ -1,12 +1,12 @@
 import { useAuthContext } from '@/lib/providers/auth-provider';
 import { Redirect, Stack } from 'expo-router';
 
-export default function SettingsLayout() {
+export default function ProfileLayout() {
   const { session } = useAuthContext();
 
   // Redirect to sign-in if not authenticated
   if (!session) {
-    return <Redirect href="/auth/sign-in" />;
+    //return <Redirect href="/auth/sign-in" />;
   }
 
   return (
