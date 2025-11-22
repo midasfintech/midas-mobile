@@ -11,7 +11,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.midasfintech.app",
+      "bundleIdentifier": "com.midasfinance.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -23,7 +23,7 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "package": "com.midasfintech.app",
+      "package": "com.midasfinance.app",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
