@@ -24,9 +24,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "package": "com.midasfinance.app",
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "jsEngine": "jsc"
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "output": "static",
@@ -53,7 +51,16 @@
         }
       ],
       "expo-localization",
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "modular_headers": true
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
