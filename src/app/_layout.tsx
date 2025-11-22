@@ -44,6 +44,7 @@ function RootLayoutContent() {
             <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? `dark ${bgColor}` : bgColor}>
               <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="app" />
+                <Stack.Screen name="app/chapter" />
                 <Stack.Screen name="auth" />
                 <Stack.Screen name="settings" />
               </Stack>
