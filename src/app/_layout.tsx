@@ -5,6 +5,7 @@ import { NAV_THEME } from '@/lib/theme';
 import { ThemeProvider } from '@/lib/theme-context';
 import { ThemeProvider as NavThemeProvider } from '@react-navigation/native';
 import { PortalHost } from '@rn-primitives/portal';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
@@ -24,18 +25,28 @@ function RootLayoutContent() {
   const { colorScheme } = useColorScheme();
   const effectiveColorScheme = colorScheme ?? 'light';
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: 2,
+      },
+    },
+  });
+
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
       <NavThemeProvider value={NAV_THEME[effectiveColorScheme]}>
         <AuthProvider>
-          <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? 'dark bg-background' : 'bg-background'}>
-            <Stack screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="app" />
-              <Stack.Screen name="auth" />
-            </Stack>
-            <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />
-            <PortalHost />
-          </View>
+          <QueryClientProvider client={queryClient}>
+            <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? 'dark bg-background' : 'bg-background'}>
+              <Stack screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="app" />
+                <Stack.Screen name="auth" />
+              </Stack>
+              <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />
+              <PortalHost />
+            </View>
+          </QueryClientProvider>
         </AuthProvider>
       </NavThemeProvider>
     </SafeAreaProvider>

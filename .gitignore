@@ -47,4 +47,5 @@ app-example
 builds/*.ipa
 builds/*.apk
 builds/*.aab
+builds/*.app
 builds/*.tar.gz

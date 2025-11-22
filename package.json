@@ -30,6 +30,7 @@
     "@rneui/themed": "^4.0.0-rc.8",
     "@shopify/react-native-skia": "2.2.12",
     "@supabase/supabase-js": "^2.84.0",
+    "@tanstack/react-query": "^5.90.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "expo": "~54.0.25",
