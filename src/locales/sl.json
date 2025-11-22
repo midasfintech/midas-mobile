@@ -77,11 +77,8 @@
   },
   "app": {
     "home": {
-      "welcome": "Dobrodošli!",
-      "userId": "ID uporabnika:",
-      "email": "E-pošta:",
-      "showcase": "Razstavni prostor",
-      "profile": "Profil"
+      "title": "Odpiramo vrata k pametnejšim finančnim odločitvam",
+      "subtitle": "Spremeni odnos do denarja: naulči se kako razmišljajo investitorji, kako se izogniti nategom in kako iz malega zgraditi nekaj konkretnega."
     },
     "profile": {
       "title": "Profil",

@@ -1,6 +1,6 @@
 import { ScreenContainer } from "@/components/screen-container";
 import { useAuthContext } from "@/lib/providers/auth-provider";
-import { Redirect, Stack } from "expo-router";
+import { Redirect } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
 import {
   Icon,

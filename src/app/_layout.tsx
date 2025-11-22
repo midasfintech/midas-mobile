@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/lib/theme-context';
 import { ThemeProvider as NavThemeProvider } from '@react-navigation/native';
 import { PortalHost } from '@rn-primitives/portal';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Stack } from 'expo-router';
+import { Stack, usePathname } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 import 'react-native-reanimated';
@@ -24,6 +24,7 @@ export default function RootLayout() {
 function RootLayoutContent() {
   const { colorScheme } = useColorScheme();
   const effectiveColorScheme = colorScheme ?? 'light';
+  const pathname = usePathname();
 
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -33,12 +34,14 @@ function RootLayoutContent() {
     },
   });
 
+  const bgColor = pathname === "/app" ? "bg-primary" : "bg-background";
+
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
       <NavThemeProvider value={NAV_THEME[effectiveColorScheme]}>
         <AuthProvider>
           <QueryClientProvider client={queryClient}>
-            <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? 'dark bg-background' : 'bg-background'}>
+            <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? `dark ${bgColor}` : bgColor}>
               <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="app" />
                 <Stack.Screen name="auth" />
