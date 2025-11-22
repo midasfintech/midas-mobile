@@ -93,6 +93,16 @@
       "dob": "Date of Birth:",
       "delete": "Delete Account",
       "edit": "Save Changes"
+    },
+    "assessment": {
+      "title": "Assessment",
+      "subtitle": "Answer the following questions, so that we can assess your knowledge and tailor your experience.",
+      "questionCounter": "Question {{current}} of {{total}}",
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "loadError": "Failed to load assessment questions."
     }
   },
   "employmentStatus": {

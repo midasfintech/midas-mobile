@@ -3,21 +3,25 @@ import { Text } from '@/components/ui/text';
 import { useGetProfile } from '@/lib/api-query/use-get-profile';
 import { useAuthContext } from '@/lib/providers/auth-provider';
 import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 
 export default function AppHome() {
   const { t } = useTranslation();
   const { session } = useAuthContext();
-  const { data: userProfile } = useGetProfile({ id: session?.user?.id });
   const router = useRouter();
+  const { data: userProfile } = useGetProfile({ id: session?.user?.id });
 
-  function handleOpenShowcase() {
-    // router.push('/showcase');
-  }
   function handleOpenProfile() {
     router.push('/app/profile');
   }
+
+  useEffect(() => {
+    if (userProfile && !userProfile.data?.completed_onboarding) {
+      router.replace('/app/assessment');
+    }
+  }, [userProfile, router]);
 
   return (
     <View className="flex-1 bg-background px-6 justify-center items-center gap-6">
@@ -40,10 +44,6 @@ export default function AppHome() {
           </Button>
         </View>
       </View>
-
-      <Button onPress={handleOpenShowcase} className="mt-4">
-        <Text className="text-primary-foreground font-semibold">{t('app.home.showcase')}</Text>
-      </Button>
     </View>
   );
 }

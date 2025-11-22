@@ -9,7 +9,7 @@ function Input({
   return (
     <TextInput
       className={cn(
-        'dark:bg-input/30 border-input bg-background text-foreground flex h-6 w-full max-w-full ml-auto flex-row items-center rounded-md border-b py-0 text-base leading-5 shadow-sm shadow-black/5 sm:h-9 box-border text-left',
+        'dark:bg-input/30 border-input bg-background text-foreground flex h-10 w-full min-w-0 flex-row items-center rounded-md border px-3 py-1 text-base leading-5 shadow-sm shadow-black/5 sm:h-9',
         props.editable === false &&
           cn(
             'opacity-50',
@@ -21,8 +21,7 @@ function Input({
             'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
             'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive'
           ),
-          native: 'placeholder:text-muted-foreground placeholder:opacity-70',
-        
+          native: 'placeholder:text-muted-foreground',
         }),
         className
       )}

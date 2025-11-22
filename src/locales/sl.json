@@ -93,6 +93,16 @@
       "dob": "Datum rojstva:",
       "delete": "Izbriši račun",
       "edit": "Shrani spremembe"
+    },
+    "assessment": {
+      "title": "Ocenjevanje",
+      "subtitle": "Odgovorite na naslednja vprašanja, da lahko ocenimo vaše znanje in prilagodimo vašo izkušnjo.",
+      "questionCounter": "Vprašanje {{current}} od {{total}}",
+      "previous": "Nazaj",
+      "next": "Naprej",
+      "submit": "Oddaj",
+      "submitting": "Oddajanje...",
+      "loadError": "Napaka pri nalaganju vprašanj ocenjevanja."
     }
   },
   "employmentStatus": {
