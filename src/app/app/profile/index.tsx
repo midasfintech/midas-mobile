@@ -1,104 +1,125 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
+import { Input } from '@/components/ui/input';
 import { useAuthContext } from '@/lib/providers/auth-provider';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import { supabase } from '@/lib/supabase';
+import { useGetProfile } from '@/lib/api-query/use-get-profile.ts';
+import { setProfile } from '@/lib/api-query/set-profile.ts';
 import { useState, useEffect } from 'react';
 
 export default function Profile() {
   const { t } = useTranslation();
   const { session, signOut } = useAuthContext();
   const router = useRouter();
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [dob, setDob] = useState('');
+  const [status, setStatus] = useState('');
+  const [income, setIncome] = useState('');
 
   useEffect(() => {
-    async function fetchProfile() {
-      try {
-        const { data, error } = await supabase
-          .from('users_data')
-          .select('*')
-          .eq('id', session?.user?.id)
-          .single();
-
-        if (error) throw error;
-        setProfile(data);
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-      } finally {
-        setLoading(false);
-      }
+    if (profile?.data) {
+      setName(profile.data.first_name || '');
+      setSurname(profile.data.last_name || '');
+      setDob(profile.data.date_of_birth || '');
+      setStatus(profile.data.employment || '');
+      setIncome(profile.data.net_monthly_income || '');
     }
+  }, [profile?.data]);
 
-    if (session?.user?.id) {
-      fetchProfile();
-    }
-  }, [session?.user?.id]);
+  const { data: profile } = useGetProfile({ id: session?.user?.id });
 
   async function handleSignOut() {
     await signOut();
       router.replace('/auth/sign-in');
   }
-
+  async function handleDelete() {
+    // Handle account deletion
+  }
+  function handleSaveEdit() {
+    setProfile({
+      id: session?.user?.id, 
+      name: profile?.data.first_name || '', 
+      surname: profile?.data.last_name || '', 
+      income: profile?.data.net_monthly_income || 0, 
+      status: profile?.data.employment || '', 
+      dob: profile?.data.date_of_birth || ''
+    });
+  }
 
   return (
     <View className="flex-1 bg-background px-6 justify-center items-center gap-6">
       <View className="items-center gap-4">
-        <Text variant="h1">{t('app.profile.title')}</Text>
+        <Text variant="h1">{t('app.profile.title')}{profile.data.first_name}!</Text>
 
-        <View className="bg-card p-6 rounded-lg border border-border w-full max-w-md gap-3">
-          <View>
+        <View className="bg-card p-6 rounded-lg border border-border w-[60%] gap-3">
+          <View className="flex-row items-center gap-2">
             <Text variant="muted" className="mb-1">{t('app.profile.name')}</Text>
-            <Text className="font-mono text-sm">{profile?.first_name}</Text>
-            <Button className="px-2 py-1 rounded-md text-xs h-6 w-1/2 m-auto mt-2">
-              <Text>{t('app.profile.edit')}</Text>
-            </Button>
+            <Input
+              value={name}
+              editable={true}
+              className="font-mono text-sm bg-transparent border-none outline-none"
+              onChangeText={setName}
+            />
           </View>
 
-          <View>
+          <View className="flex-row items-center gap-2">
             <Text variant="muted" className="mb-1">{t('app.profile.surname')}</Text>
-            <Text className="font-mono text-sm">{profile?.last_name}</Text>
-            <Button className="px-2 py-1 rounded-md text-xs h-6 w-1/2 m-auto mt-2">
-              <Text>{t('app.profile.edit')}</Text>
-            </Button>
+            <Input
+              value={surname}
+              editable={true}
+              className="font-mono text-sm bg-transparent border-b border-border"
+              onChangeText={setSurname}
+            />
           </View>
 
-          <View>
+          <View className="flex-row items-center gap-2">
             <Text variant="muted" className="mb-1">{t('app.profile.dob')}</Text>
-            <Text className="font-semibold">{profile?.dob}</Text>
-            <Button className="px-2 py-1 rounded-md text-xs h-6 w-1/2 m-auto mt-2">
-              <Text>{t('app.profile.edit')}</Text>
-            </Button>
+            <Input
+              value={dob}
+              editable={true}
+              className="font-mono text-sm bg-transparent border-none outline-none"
+              onChangeText={setDob}
+            />
           </View>
 
-          <View>
+          <View className="flex-row items-center gap-2">
             <Text variant="muted" className="mb-1">{t('app.profile.status')}</Text>
-            <Text className="font-mono text-sm">{session?.user?.id}</Text>
-            <Button className="px-2 py-1 rounded-md text-xs h-6 w-1/2 m-auto mt-2">
-              <Text>{t('app.profile.edit')}</Text>
-            </Button>
+            <Input
+              value={status}
+              editable={true}
+              className="font-mono text-sm bg-transparent border-none outline-none"
+              onChangeText={setStatus}
+            />
           </View>
 
-          <View>
+          <View className="flex-row items-center gap-2">
             <Text variant="muted" className="mb-1">{t('app.profile.income')}</Text>
-            <Text className="font-mono text-sm">{session?.user?.id}</Text>
-            <Button className="px-2 py-1 rounded-md text-xs h-6 w-1/2 m-auto mt-2">
-              <Text>{t('app.profile.edit')}</Text>
-            </Button>
+            <Input
+              value={income}
+              editable={true}
+              className="font-mono text-sm bg-transparent border-none outline-none"
+              onChangeText={setIncome}
+            />
           </View>
 
-          <View>
-            <Text variant="muted" className="mb-1">{t('app.profile.email')}</Text>
-            <Text className="font-semibold">{session?.user?.email}</Text>
-          </View>
+          <Button onPress={handleSaveEdit} className="mt-4">
+            <Text className="text-primary-foreground font-semibold">{t('app.profile.edit')}</Text>
+          </Button>
         </View>
-      </View>
 
-      <Button onPress={handleSignOut} className="mt-4">
-        <Text className="text-primary-foreground font-semibold">{t('app.profile.signOut')}</Text>
-      </Button>
+      </View>
+      <View className="flex-row justify-center items-center gap-4 mt-4">
+        <Button onPress={handleSignOut} className="mt-4">
+          <Text className="text-primary-foreground font-semibold">{t('app.profile.signOut')}</Text>
+        </Button>
+        <Button variant="destructive" onPress={handleDelete} className="mt-4">
+          <Text className="font-semibold">{t('app.profile.delete')}</Text>
+        </Button>
+      </View>
     </View>
   );
 }

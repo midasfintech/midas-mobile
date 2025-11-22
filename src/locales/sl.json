@@ -84,14 +84,15 @@
       "profile": "Profil"
     },
     "profile": {
-      "welcome": "Dobrodošli!",
+      "welcome": "Živjo, ",
       "name": "Ime:",
       "surname": "Priimek:",
       "status": "Zaposlitveni status:",
       "income": "Mesečni dohodek:",
       "signOut": "Odjava",
       "dob": "Datum rojstva:",
-      "edit": "Uredi ✏️"
+      "delete": "Izbriši račun",
+      "edit": "Shrani spremembe"
     }
   },
   "employmentStatus": {

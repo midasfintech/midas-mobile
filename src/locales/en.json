@@ -84,14 +84,15 @@
       "profile": "Profile"
     },
     "profile": {
-      "title": "Profile",
+      "title": "Hello, ",
       "name": "First Name:",
       "surname": "Last Name:",
       "status": "Employment Status:",
       "income": "Monthly Income:",
       "signOut": "Sign Out",
       "dob": "Date of Birth:",
-      "edit": "Edit ✏️"
+      "delete": "Delete Account",
+      "edit": "Save Changes"
     }
   },
   "employmentStatus": {

@@ -12,7 +12,7 @@ export type EmploymentStatus = typeof EmploymentStatuses[keyof typeof Employment
 export const KnowledgeLevels = {
   BEGINNER: 'beginner',
   INTERMEDIATE: 'intermediate',
-  ADVANCED: 'advanced',
+  ADVANCED: 'expert',
 } as const;
 
 export type KnowledgeLevel = typeof KnowledgeLevels[keyof typeof KnowledgeLevels];

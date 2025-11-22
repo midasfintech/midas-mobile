@@ -12,8 +12,6 @@ export default function AppHome() {
   const { data: userProfile } = useGetProfile({ id: session?.user?.id });
   const router = useRouter();
 
-  console.log({ userProfile });
-
   function handleOpenShowcase() {
     // router.push('/showcase');
   }
