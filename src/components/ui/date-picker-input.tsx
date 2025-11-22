@@ -136,6 +136,7 @@ function DatePickerInput({
                   minimumDate={minimumDate}
                   maximumDate={maximumDate}
                   style={{ height: 200 }}
+                  textColor={colorScheme === "dark" ? "white" : "black"}
                 />
               </View>
             </Pressable>
