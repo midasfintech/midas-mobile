@@ -78,8 +78,6 @@ export default function SignUp() {
       }
     });
 
-    console.log({ error })
-
     if (error) {
       Alert.alert(t("auth.signUp.errorTitle"), error.message);
       setLoading(false);

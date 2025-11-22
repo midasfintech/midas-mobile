@@ -18,7 +18,6 @@ export default function AppHome() {
   }
 
   useEffect(() => {
-    console.log('User Profile:', userProfile);
     if (userProfile && userProfile.data?.knowledge === null) {
       router.replace('/app/assessment');
     }
