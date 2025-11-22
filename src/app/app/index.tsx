@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
+import { useGetProfile } from '@/lib/api-query/use-get-profile';
 import { useAuthContext } from '@/lib/providers/auth-provider';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -7,8 +8,11 @@ import { View } from 'react-native';
 
 export default function AppHome() {
   const { t } = useTranslation();
-  const { session, signOut } = useAuthContext();
+  const { session } = useAuthContext();
+  const { data: userProfile } = useGetProfile({ id: session?.user?.id });
   const router = useRouter();
+
+  console.log({ userProfile });
 
   function handleOpenShowcase() {
     // router.push('/showcase');
