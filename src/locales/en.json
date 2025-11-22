@@ -38,6 +38,16 @@
     "signUp": {
       "title": "Create Account",
       "subtitle": "Sign up to get started with Midas",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "employmentStatus": "Employment Status",
+      "selectEmploymentStatus": "Select Employment Status",
+      "netMonthlyIncome": "Net Monthly Income",
+      "dateOfBirth": "Date of Birth",
+      "dateOfBirthPlaceholder": "Select your date of birth",
+      "monthlyInvestmentAmount": "Monthly Investment Amount",
       "email": "Email",
       "emailPlaceholder": "email@address.com",
       "password": "Password",
@@ -51,7 +61,9 @@
       "errorTitle": "Error",
       "successTitle": "Success",
       "passwordMismatch": "Passwords do not match",
-      "verificationEmail": "Please check your inbox for email verification!"
+      "verificationEmail": "Please check your inbox for email verification!",
+      "next": "Next",
+      "fillAllFields": "Please fill in all required fields."
     },
     "confirmEmail": {
       "title": "Check Your Email",
@@ -81,5 +93,12 @@
       "dob": "Date of Birth:",
       "edit": "Edit ✏️"
     }
+  },
+  "employmentStatus": {
+    "employed": "Employed",
+    "selfEmployed": "Self-Employed",
+    "unemployed": "Unemployed",
+    "student": "Student",
+    "retired": "Retired"
   }
 }

@@ -1,1 +1,8 @@
+export { CalendarIcon } from './calendar';
+export { CheckIcon } from './check';
 export { ChevronDownIcon } from './chevron-down';
+export { ChevronRightIcon } from './chevron-right';
+export { ChevronUpIcon } from './chevron-up';
+export { MailIcon } from './mail';
+export { MoonIcon } from './moon';
+export { SunIcon } from './sun';

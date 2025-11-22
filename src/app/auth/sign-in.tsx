@@ -5,8 +5,8 @@ import { Text } from '@/components/ui/text';
 import { supabase } from '@/lib/supabase';
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 
 export default function SignIn() {
   const { t } = useTranslation();
@@ -56,7 +56,7 @@ export default function SignIn() {
           </View>
 
           {/* Form Section */}
-          <View className="gap-6">
+          <View className="gap-4">
             <View className="gap-2">
               <Label nativeID="email">{t('auth.signIn.email')}</Label>
               <Input

@@ -38,6 +38,16 @@
     "signUp": {
       "title": "Ustvarite račun",
       "subtitle": "Registrirajte se za začetek uporabe Midas",
+      "firstName": "Ime",
+      "firstNamePlaceholder": "Vnesite svoje ime",
+      "lastName": "Priimek",
+      "lastNamePlaceholder": "Vnesite svoj priimek",
+      "employmentStatus": "Zaposlitveni status",
+      "selectEmploymentStatus": "Izberite zaposlitveni status",
+      "netMonthlyIncome": "Neto mesečni dohodek",
+      "monthlyInvestmentAmount": "Mesečni znesek za naložbe",
+      "dateOfBirth": "Datum rojstva",
+      "dateOfBirthPlaceholder": "Izberite datum rojstva",
       "email": "E-pošta",
       "emailPlaceholder": "email@naslov.si",
       "password": "Geslo",
@@ -51,7 +61,9 @@
       "errorTitle": "Napaka",
       "successTitle": "Uspešno",
       "passwordMismatch": "Gesli se ne ujemata",
-      "verificationEmail": "Preverite svoj e-poštni nabiralnik za potrditev!"
+      "verificationEmail": "Preverite svoj e-poštni nabiralnik za potrditev!",
+      "next": "Naprej",
+      "fillAllFields": "Prosimo, izpolnite vsa zahtevana polja."
     },
     "confirmEmail": {
       "title": "Preverite e-pošto",
@@ -81,5 +93,12 @@
       "dob": "Datum rojstva:",
       "edit": "Uredi ✏️"
     }
+  },
+  "employmentStatus": {
+    "employed": "Zaposlen",
+    "selfEmployed": "Samozaposlen",
+    "unemployed": "Brez zaposlitve",
+    "student": "Študent",
+    "retired": "Upokojenec"
   }
 }
