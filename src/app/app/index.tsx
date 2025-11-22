@@ -19,7 +19,7 @@ export default function AppHome() {
 
   useEffect(() => {
     if (userProfile && userProfile.data?.knowledge === null) {
-      router.replace('/app/assessment');
+      router.replace('/auth/assessment');
     }
   }, [userProfile, router]);
 

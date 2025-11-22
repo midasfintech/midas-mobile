@@ -84,15 +84,27 @@
       "profile": "Profile"
     },
     "profile": {
-      "title": "Hello, ",
+      "title": "Profile",
+      "subtitle": "Manage your account information",
+      "email": "Email",
       "name": "First Name:",
       "surname": "Last Name:",
       "status": "Employment Status:",
       "income": "Monthly Income:",
       "signOut": "Sign Out",
       "dob": "Date of Birth:",
+      "edit": "Edit",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
       "delete": "Delete Account",
-      "edit": "Save Changes"
+      "deleteConfirmTitle": "Delete Account",
+      "deleteConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone.",
+      "deleteConfirm": "Delete",
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "saveSuccess": "Profile updated successfully",
+      "saveError": "Failed to update profile"
     },
     "assessment": {
       "title": "Assessment",
@@ -107,7 +119,7 @@
   },
   "employmentStatus": {
     "employed": "Employed",
-    "selfEmployed": "Self-Employed",
+    "self_employed": "Self-Employed",
     "unemployed": "Unemployed",
     "student": "Student",
     "retired": "Retired"

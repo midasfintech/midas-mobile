@@ -84,15 +84,27 @@
       "profile": "Profil"
     },
     "profile": {
-      "welcome": "Živjo, ",
+      "title": "Profil",
+      "subtitle": "Upravljajte informacije o svojem računu",
+      "email": "E-pošta",
       "name": "Ime:",
       "surname": "Priimek:",
       "status": "Zaposlitveni status:",
       "income": "Mesečni dohodek:",
       "signOut": "Odjava",
       "dob": "Datum rojstva:",
+      "edit": "Uredi",
+      "save": "Shrani spremembe",
+      "saving": "Shranjevanje...",
+      "cancel": "Prekliči",
       "delete": "Izbriši račun",
-      "edit": "Shrani spremembe"
+      "deleteConfirmTitle": "Izbriši račun",
+      "deleteConfirmMessage": "Ali ste prepričani, da želite izbrisati svoj račun? Tega dejanja ni mogoče razveljaviti.",
+      "deleteConfirm": "Izbriši",
+      "errorTitle": "Napaka",
+      "successTitle": "Uspešno",
+      "saveSuccess": "Profil uspešno posodobljen",
+      "saveError": "Neuspešna posodobitev profila"
     },
     "assessment": {
       "title": "Ocenjevanje",
@@ -107,7 +119,7 @@
   },
   "employmentStatus": {
     "employed": "Zaposlen",
-    "selfEmployed": "Samozaposlen",
+    "self_employed": "Samozaposlen",
     "unemployed": "Brez zaposlitve",
     "student": "Študent",
     "retired": "Upokojenec"

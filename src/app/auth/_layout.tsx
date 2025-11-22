@@ -31,7 +31,7 @@ export default function AuthLayout() {
   };
 
   return (
-    <ScreenContainer>
+    <ScreenContainer edges={["bottom"]}>
       <View className="w-full flex flex-row justify-between items-center px-6 py-2">
         <Pressable onPress={toggleThemeChange}>
           <SunIcon className="text-foreground" />
