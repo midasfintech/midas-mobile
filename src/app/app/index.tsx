@@ -1,22 +1,13 @@
 import { Text } from "@/components/ui/text";
 import { useGetProfile } from "@/lib/api-query/use-get-profile";
 import { useAuthContext } from "@/lib/providers/auth-provider";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { GraduationCapIcon } from "@/lib/icons/graduation-cap";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView, View } from "react-native";
 import { ChartLineIcon } from "@/lib/icons/chart";
-import { ChartArea, ChartContainer, ChartLine } from "@/components/ui/chart";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Car, Scroll } from "lucide-react-native";
+import { ChartLine } from "@/components/ui/chart";
 
 export default function AppHome() {
   const { t } = useTranslation();
@@ -52,8 +43,12 @@ export default function AppHome() {
         <View className="bg-card rounded-lg shadow-sm -mt-16 mx-6 pr-2 pl-1 pt-2 pb-1 border border-primary">
           <ChartLine data={userGrowthData} height={200} showGrid={false} />
           <View className="flex flex-row justify-between pl-1 abso">
-            <Text className="text-sm text-foreground">{t("app.home.chartStart")}</Text>
-            <Text className="text-sm text-foreground">10 {t("app.home.chartEnd")}</Text>
+            <Text className="text-sm text-foreground">
+              {t("app.home.chartStart")}
+            </Text>
+            <Text className="text-sm text-foreground">
+              10 {t("app.home.chartEnd")}
+            </Text>
           </View>
         </View>
         <Text className="text-xs text-muted-foreground mx-6 mt-2 mb-8">

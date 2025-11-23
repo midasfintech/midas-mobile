@@ -9,6 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
+    "prettier:format": "prettier --ignore-path .gitignore --write \"./src/**/*.{ts,tsx,js,css,scss,html,json}\"",
+    "format": "npm run prettier:format && npm run lint --fix",
     "build": "node ./scripts/build.js"
   },
   "dependencies": {

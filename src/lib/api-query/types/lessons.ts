@@ -13,7 +13,7 @@ export const lessonSchema = z.object({
   chapter_id: z.number(),
   unlocked: z.boolean(),
   completed: z.boolean(),
-})
+});
 
 export type Lessons = z.infer<typeof lessonsSchema>;
 export const lessonsSchema = z.array(lessonSchema);

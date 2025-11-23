@@ -8,5 +8,5 @@ export default function LearningLayout() {
         <Stack.Screen name="settings" />
       </Stack>
     </>
-  )
+  );
 }

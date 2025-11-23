@@ -11,7 +11,11 @@ export function useGetProfile({ id }: { id: string | undefined }) {
         return null;
       }
 
-      const profile = await supabase.from('users_data').select('*').eq('id', id).single();
+      const profile = await supabase
+        .from("users_data")
+        .select("*")
+        .eq("id", id)
+        .single();
 
       if (profile.error) {
         return null;
@@ -19,5 +23,5 @@ export function useGetProfile({ id }: { id: string | undefined }) {
 
       return await userProfileSchema.safeParseAsync(profile.data);
     },
-  })
+  });
 }

@@ -61,14 +61,14 @@ export function MultiSelectTile({
                 ? "border-primary bg-primary"
                 : "border-border bg-muted active:bg-muted/80",
               disabled && "opacity-50",
-              tileClassName
+              tileClassName,
             )}
           >
             {/* Option label */}
             <Text
               className={cn(
                 "pr-8 font-semibold w-4/5",
-                isSelected ? "text-primary-foreground" : "text-foreground"
+                isSelected ? "text-primary-foreground" : "text-foreground",
               )}
             >
               {option.label}
@@ -80,12 +80,10 @@ export function MultiSelectTile({
                 "flex h-5 w-5 items-center justify-center rounded-full",
                 isSelected
                   ? "bg-background"
-                  : "border-2 border-muted-foreground bg-transparent"
+                  : "border-2 border-muted-foreground bg-transparent",
               )}
             >
-              {isSelected && (
-                <CheckIcon size={12} className="text-primary" />
-              )}
+              {isSelected && <CheckIcon size={12} className="text-primary" />}
             </View>
           </Pressable>
         );
@@ -143,13 +141,13 @@ export function CompactMultiSelectTile({
               isSelected
                 ? "border-primary bg-primary"
                 : "border-border bg-background active:bg-muted",
-              disabled && "opacity-50"
+              disabled && "opacity-50",
             )}
           >
             <Text
               className={cn(
                 "font-medium",
-                isSelected ? "text-primary-foreground" : "text-foreground"
+                isSelected ? "text-primary-foreground" : "text-foreground",
               )}
             >
               {option.label}

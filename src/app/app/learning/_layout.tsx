@@ -10,7 +10,9 @@ export default function LearningLayout() {
           name="chapter"
           options={{
             headerBackButtonDisplayMode: "minimal",
-            headerBackground: () => <View className="flex-1 bg-background"></View>,
+            headerBackground: () => (
+              <View className="flex-1 bg-background"></View>
+            ),
             headerTitle: "",
           }}
         />
@@ -18,7 +20,9 @@ export default function LearningLayout() {
           name="lesson"
           options={{
             headerBackButtonDisplayMode: "minimal",
-            headerBackground: () => <View className="flex-1 bg-background"></View>,
+            headerBackground: () => (
+              <View className="flex-1 bg-background"></View>
+            ),
             headerTitle: "",
           }}
         />

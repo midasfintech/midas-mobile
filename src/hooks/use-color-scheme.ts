@@ -1,1 +1,4 @@
-export { useTheme as useColorScheme, type ColorScheme } from '@/lib/theme-context';
+export {
+  useTheme as useColorScheme,
+  type ColorScheme,
+} from "@/lib/theme-context";

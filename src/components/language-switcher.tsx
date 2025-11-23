@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next'
-import { View } from 'react-native'
-import { changeLanguage } from '@/lib/i18n'
+import { useTranslation } from "react-i18next";
+import { View } from "react-native";
+import { changeLanguage } from "@/lib/i18n";
 import {
   Select,
   SelectContent,
@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from "@/components/ui/select";
 
 /**
  * Language switcher component that allows users to change the app language.
@@ -16,18 +16,20 @@ import {
  * The selected language is persisted to local storage.
  */
 export function LanguageSwitcher() {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const languages = {
-    en: 'English',
-    sl: 'Slovenščina'
-  }
+    en: "English",
+    sl: "Slovenščina",
+  };
 
-  const handleLanguageChange = (value: { value: string; label: string } | undefined) => {
+  const handleLanguageChange = (
+    value: { value: string; label: string } | undefined,
+  ) => {
     if (value?.value) {
-      changeLanguage(value.value)
+      changeLanguage(value.value);
     }
-  }
+  };
 
   return (
     <View className="w-full">
@@ -39,7 +41,7 @@ export function LanguageSwitcher() {
         onValueChange={handleLanguageChange}
       >
         <SelectTrigger>
-          <SelectValue placeholder={t('languageSwitcher.selectLanguage')} />
+          <SelectValue placeholder={t("languageSwitcher.selectLanguage")} />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
@@ -53,5 +55,5 @@ export function LanguageSwitcher() {
         </SelectContent>
       </Select>
     </View>
-  )
+  );
 }

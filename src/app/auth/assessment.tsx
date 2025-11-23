@@ -83,7 +83,7 @@ export default function AssessmentPage() {
         Alert.alert(
           t("app.assessment.errorTitle"),
           t("app.assessment.submitError"),
-          [{ text: "OK", style: "default" }]
+          [{ text: "OK", style: "default" }],
         );
         setIsSubmitting(false);
       } else {
@@ -97,7 +97,7 @@ export default function AssessmentPage() {
               text: t("app.assessment.getStarted"),
               onPress: () => router.replace("/app"),
             },
-          ]
+          ],
         );
       }
     } catch (error) {
@@ -105,7 +105,7 @@ export default function AssessmentPage() {
       Alert.alert(
         t("app.assessment.errorTitle"),
         t("app.assessment.networkError"),
-        [{ text: "OK", style: "default" }]
+        [{ text: "OK", style: "default" }],
       );
       setIsSubmitting(false);
     }

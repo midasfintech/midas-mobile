@@ -65,10 +65,10 @@ export default function LessonPage() {
     setIsSubmitting(true);
     try {
       console.log({
-          lesson_id: lesson.id,
-          answer: selectedAnswer[0],
-        })
-      const { data, error } = await supabase.functions.invoke("complete-lesson", {
+        lesson_id: lesson.id,
+        answer: selectedAnswer[0],
+      });
+      const { error } = await supabase.functions.invoke("complete-lesson", {
         body: {
           lesson_id: lesson.id,
           answer: selectedAnswer[0],
@@ -80,7 +80,7 @@ export default function LessonPage() {
         Alert.alert(
           t("app.chapters.errorTitle"),
           t("app.chapters.wrongAnswer"),
-          [{ text: t("app.chapters.tryAgain"), style: "default" }]
+          [{ text: t("app.chapters.tryAgain"), style: "default" }],
         );
       } else {
         await queryClient.invalidateQueries();
@@ -92,16 +92,14 @@ export default function LessonPage() {
               text: t("app.chapters.continue"),
               onPress: () => router.push("/app/learning"),
             },
-          ]
+          ],
         );
       }
     } catch (error) {
       console.error("Error submitting lesson:", error);
-      Alert.alert(
-        t("app.chapters.errorTitle"),
-        t("app.chapters.submitError"),
-        [{ text: "OK", style: "default" }]
-      );
+      Alert.alert(t("app.chapters.errorTitle"), t("app.chapters.submitError"), [
+        { text: "OK", style: "default" },
+      ]);
     } finally {
       setIsSubmitting(false);
     }
@@ -117,7 +115,11 @@ export default function LessonPage() {
     } else {
       return (
         <Button onPress={handleSubmit}>
-          <Text>{isSubmitting ? t("app.chapters.submitting") : t("app.chapters.submit")}</Text>
+          <Text>
+            {isSubmitting
+              ? t("app.chapters.submitting")
+              : t("app.chapters.submit")}
+          </Text>
         </Button>
       );
     }

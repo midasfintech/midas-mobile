@@ -10,17 +10,17 @@ export function LessonCard({ lesson }: { lesson: Lesson }) {
 
   const getStatusIcon = () => {
     if (lesson.completed) {
-      return <CheckIcon className="text-green-400" size={18} />
+      return <CheckIcon className="text-green-400" size={18} />;
     }
 
     if (!lesson.unlocked) {
-      return <LockIcon size={18} />
+      return <LockIcon size={18} />;
     }
 
     if (lesson.unlocked) {
-      return <ChevronRightIcon size={18} />
+      return <ChevronRightIcon size={18} />;
     }
-  }
+  };
 
   const handleOpenLesson = () => {
     router.push({
@@ -38,13 +38,16 @@ export function LessonCard({ lesson }: { lesson: Lesson }) {
         "items-center justify-between",
         "border-border rounded-xl border",
         "shadow-sm shadow-black/5",
-        lesson.unlocked ? "bg-card" : " bg-muted"
+        lesson.unlocked ? "bg-card" : " bg-muted",
       )}
     >
-      <Text className={cn(
-        "font-bold w-5/6",
-        { "text-muted-foreground": !lesson.unlocked}
-      )}>{lesson.chapter_index + 1}. {lesson.title}</Text>
+      <Text
+        className={cn("font-bold w-5/6", {
+          "text-muted-foreground": !lesson.unlocked,
+        })}
+      >
+        {lesson.chapter_index + 1}. {lesson.title}
+      </Text>
 
       {getStatusIcon()}
     </TouchableOpacity>

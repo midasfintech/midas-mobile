@@ -99,7 +99,7 @@ function DatePickerInput({
         <CalendarIcon size={16} className="text-muted-foreground ml-2" />
       </Pressable>
 
-      {Platform.OS === 'ios' && showPicker && (
+      {Platform.OS === "ios" && showPicker && (
         <Modal
           transparent={true}
           animationType="slide"
@@ -122,7 +122,9 @@ function DatePickerInput({
                   Select Date
                 </Text>
                 <Pressable onPress={handleIOSConfirm}>
-                  <Text className="text-primary text-base font-medium">Done</Text>
+                  <Text className="text-primary text-base font-medium">
+                    Done
+                  </Text>
                 </Pressable>
               </View>
 

@@ -1,17 +1,10 @@
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { Text } from "@/components/ui/text";
 import React, { useState } from "react";
-import { View, type ViewProps, Dimensions, StyleSheet } from "react-native";
-import {
-  CartesianChart,
-  Line,
-  Bar,
-  Area,
-  type PointsArray,
-} from "victory-native";
-import { Circle, useFont } from "@shopify/react-native-skia";
+import { View, type ViewProps, StyleSheet } from "react-native";
+import { CartesianChart, Line, Bar, Area } from "victory-native";
+import { Circle } from "@shopify/react-native-skia";
 import { useSharedValue } from "react-native-reanimated";
-import * as Haptics from "expo-haptics";
 
 // Types
 export interface ChartDataPoint {
@@ -85,7 +78,7 @@ export function ChartLine({
   const theme = useChartTheme();
   const chartColor = color || theme.primary;
   const { state, isActive } = useChartPressState();
-  const [activePoint, setActivePoint] = useState<ChartDataPoint | null>(null);
+  const [activePoint] = useState<ChartDataPoint | null>(null);
 
   // Validate data
   if (!data || data.length === 0) {
@@ -161,7 +154,6 @@ export function ChartBar({
 }: ChartProps) {
   const theme = useChartTheme();
   const chartColor = color || theme.primary;
-  const { state, isActive } = useChartPressState();
 
   // Validate data
   if (!data || data.length === 0) {
@@ -289,7 +281,7 @@ export function ChartArea({
 
 // Helper hook for chart press state
 function useChartPressState() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive] = useState(false);
   const state = {
     x: { position: useSharedValue(0), value: useSharedValue(0) },
     y: { y: { position: useSharedValue(0), value: useSharedValue(0) } },

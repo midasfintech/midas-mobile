@@ -1,6 +1,6 @@
-import { useColorScheme, type ColorScheme } from '@/hooks/use-color-scheme';
-import { View } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { useColorScheme, type ColorScheme } from "@/hooks/use-color-scheme";
+import { View } from "react-native";
+import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
@@ -8,19 +8,21 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 export function ThemeSwitcher() {
   const { t } = useTranslation();
   const { themeMode, setColorScheme } = useColorScheme();
 
   const themes: Record<ColorScheme, string> = {
-    light: t('themeSwitcher.light'),
-    dark: t('themeSwitcher.dark'),
-    system: t('themeSwitcher.system'),
+    light: t("themeSwitcher.light"),
+    dark: t("themeSwitcher.dark"),
+    system: t("themeSwitcher.system"),
   };
 
-  const handleThemeChange = (value: { value: string; label: string } | undefined) => {
+  const handleThemeChange = (
+    value: { value: string; label: string } | undefined,
+  ) => {
     if (value?.value) {
       setColorScheme(value.value as ColorScheme);
     }
@@ -36,7 +38,7 @@ export function ThemeSwitcher() {
         onValueChange={handleThemeChange}
       >
         <SelectTrigger>
-          <SelectValue placeholder={t('themeSwitcher.selectTheme')} />
+          <SelectValue placeholder={t("themeSwitcher.selectTheme")} />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>

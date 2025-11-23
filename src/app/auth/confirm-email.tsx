@@ -1,10 +1,10 @@
-import { Button } from '@/components/ui/button';
-import { Text } from '@/components/ui/text';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { MailIcon } from '@/lib/icons';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useTranslation } from 'react-i18next';
-import { Linking, Platform, View } from 'react-native';
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
+import { useColorScheme } from "@/hooks/use-color-scheme";
+import { MailIcon } from "@/lib/icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
+import { Linking, Platform, View } from "react-native";
 
 export default function ConfirmEmail() {
   const { t } = useTranslation();
@@ -14,9 +14,9 @@ export default function ConfirmEmail() {
 
   const openMailApp = async () => {
     const mailUrl = Platform.select({
-      ios: 'message://',
-      android: 'mailto:',
-      default: 'mailto:',
+      ios: "message://",
+      android: "mailto:",
+      default: "mailto:",
     });
 
     try {
@@ -25,7 +25,7 @@ export default function ConfirmEmail() {
         await Linking.openURL(mailUrl);
       }
     } catch (error) {
-      console.error('Error opening mail app:', error);
+      console.error("Error opening mail app:", error);
     }
   };
 
@@ -37,7 +37,7 @@ export default function ConfirmEmail() {
           <View className="w-24 h-24 bg-primary/10 rounded-full items-center justify-center">
             <MailIcon
               size={48}
-              color={colorScheme === 'dark' ? '#f0b100' : '#f0b100'}
+              color={colorScheme === "dark" ? "#f0b100" : "#f0b100"}
               strokeWidth={1.5}
             />
           </View>
@@ -46,12 +46,12 @@ export default function ConfirmEmail() {
         {/* Content Section */}
         <View className="items-center gap-4 w-full">
           <Text variant="h1" className="text-center">
-            {t('auth.confirmEmail.title')}
+            {t("auth.confirmEmail.title")}
           </Text>
 
           <View className="items-center gap-2">
             <Text variant="muted" className="text-center">
-              {t('auth.confirmEmail.subtitle')}
+              {t("auth.confirmEmail.subtitle")}
             </Text>
             {email && (
               <Text className="font-semibold text-primary text-center">
@@ -62,7 +62,7 @@ export default function ConfirmEmail() {
 
           <View className="bg-card p-6 rounded-lg border border-border w-full gap-3 mt-4">
             <Text className="text-center leading-6">
-              {t('auth.confirmEmail.instructions')}
+              {t("auth.confirmEmail.instructions")}
             </Text>
           </View>
         </View>
@@ -70,10 +70,10 @@ export default function ConfirmEmail() {
         {/* Help Section */}
         <View className="items-center gap-2 mt-4">
           <Text variant="small" className="text-muted-foreground font-semibold">
-            {t('auth.confirmEmail.didntReceive')}
+            {t("auth.confirmEmail.didntReceive")}
           </Text>
           <Text variant="small" className="text-muted-foreground text-center">
-            {t('auth.confirmEmail.checkSpam')}
+            {t("auth.confirmEmail.checkSpam")}
           </Text>
         </View>
 
@@ -81,16 +81,16 @@ export default function ConfirmEmail() {
         <View className="w-full gap-3 mt-2">
           <Button onPress={openMailApp} className="w-full">
             <Text className="text-primary-foreground font-semibold">
-              {t('auth.confirmEmail.openMailApp')}
+              {t("auth.confirmEmail.openMailApp")}
             </Text>
           </Button>
 
           <Button
-            onPress={() => router.replace('/auth/sign-in')}
+            onPress={() => router.replace("/auth/sign-in")}
             className="w-full bg-secondary"
           >
             <Text className="text-secondary-foreground font-semibold">
-              {t('auth.confirmEmail.backToLogin')}
+              {t("auth.confirmEmail.backToLogin")}
             </Text>
           </Button>
         </View>

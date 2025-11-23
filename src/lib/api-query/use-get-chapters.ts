@@ -7,7 +7,7 @@ export function useGetChapters() {
   return useQuery({
     queryKey: QueryKeys.CHAPTERS,
     queryFn: async () => {
-      const chapters = await supabase.from('users_chapters_ext').select('*');
+      const chapters = await supabase.from("users_chapters_ext").select("*");
 
       if (chapters.error) {
         return null;
@@ -16,11 +16,11 @@ export function useGetChapters() {
       const parsed = await chaptersSchema.safeParseAsync(chapters.data);
 
       if (!parsed.success) {
-        console.log('Failed to parse chapters');
+        console.log("Failed to parse chapters");
         return null;
       }
 
       return parsed.data;
     },
-  })
+  });
 }

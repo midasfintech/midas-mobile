@@ -3,7 +3,7 @@ import { createMMKV } from "react-native-mmkv";
 export const STORAGE_KEYS = {
   LANGUAGE: "app_language",
   THEME: "app_theme",
-}
+};
 
 const storage = createMMKV({
   id: "default",
@@ -79,6 +79,5 @@ export {
   getFromLocalStorage,
   localStorageContains,
   removeFromLocalStorage,
-  setInLocalStorage
+  setInLocalStorage,
 };
-

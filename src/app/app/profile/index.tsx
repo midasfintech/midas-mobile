@@ -21,7 +21,13 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, Alert, Pressable, ScrollView, View } from "react-native";
+import {
+  ActivityIndicator,
+  Alert,
+  Pressable,
+  ScrollView,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Profile() {
@@ -51,7 +57,7 @@ export default function Profile() {
       setDateOfBirth(
         profile.data.date_of_birth
           ? new Date(profile.data.date_of_birth)
-          : undefined
+          : undefined,
       );
       setEmploymentStatus(
         profile.data.employment
@@ -59,11 +65,9 @@ export default function Profile() {
               value: profile.data.employment,
               label: t(`employmentStatus.${profile.data.employment}`),
             }
-          : undefined
+          : undefined,
       );
-      setNetMonthlyIncome(
-        profile.data.net_monthly_income?.toString() || ""
-      );
+      setNetMonthlyIncome(profile.data.net_monthly_income?.toString() || "");
     }
   }, [profile?.data, t]);
 
@@ -90,15 +94,12 @@ export default function Profile() {
         setIsEditing(false);
         Alert.alert(
           t("app.profile.successTitle"),
-          t("app.profile.saveSuccess")
+          t("app.profile.saveSuccess"),
         );
       }
     } catch (error) {
       console.error("Error updating profile:", error);
-      Alert.alert(
-        t("app.profile.errorTitle"),
-        t("app.profile.saveError")
-      );
+      Alert.alert(t("app.profile.errorTitle"), t("app.profile.saveError"));
     } finally {
       setIsSaving(false);
     }
@@ -129,11 +130,11 @@ export default function Profile() {
             // TODO: Implement account deletion
             Alert.alert(
               t("app.profile.errorTitle"),
-              "Account deletion not implemented yet"
+              "Account deletion not implemented yet",
             );
           },
         },
-      ]
+      ],
     );
   }
 
@@ -144,7 +145,7 @@ export default function Profile() {
       setDateOfBirth(
         profile.data.date_of_birth
           ? new Date(profile.data.date_of_birth)
-          : undefined
+          : undefined,
       );
       setEmploymentStatus(
         profile.data.employment
@@ -152,11 +153,9 @@ export default function Profile() {
               value: profile.data.employment,
               label: t(`employmentStatus.${profile.data.employment}`),
             }
-          : undefined
+          : undefined,
       );
-      setNetMonthlyIncome(
-        profile.data.net_monthly_income?.toString() || ""
-      );
+      setNetMonthlyIncome(profile.data.net_monthly_income?.toString() || "");
     }
   }
 
@@ -316,9 +315,7 @@ export default function Profile() {
                   disabled={isSaving}
                 >
                   <Text>
-                    {isSaving
-                      ? t("app.profile.saving")
-                      : t("app.profile.save")}
+                    {isSaving ? t("app.profile.saving") : t("app.profile.save")}
                   </Text>
                 </Button>
               </View>
@@ -336,11 +333,7 @@ export default function Profile() {
             {t("app.profile.accountActions")}
           </Text>
 
-          <Button
-            variant="outline"
-            onPress={handleSignOut}
-            className="w-full"
-          >
+          <Button variant="outline" onPress={handleSignOut} className="w-full">
             <Text>{t("app.profile.signOut")}</Text>
           </Button>
 

@@ -1,4 +1,4 @@
-import * as Crypto from 'expo-crypto';
+import * as Crypto from "expo-crypto";
 import * as SecureStore from "expo-secure-store";
 import { createMMKV } from "react-native-mmkv";
 import { z } from "zod";
@@ -7,7 +7,7 @@ import { z } from "zod";
  * Gets or creates a new encryption key for the MMKV auth secure storage
  */
 function getOrCreateEncryptionKey(): string {
-  const KEY_ALIAS = 'mmkv_encryption_key';
+  const KEY_ALIAS = "mmkv_encryption_key";
 
   let key = SecureStore.getItem(KEY_ALIAS);
 

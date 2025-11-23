@@ -7,7 +7,7 @@ export function useGetAssessment() {
   return useQuery({
     queryKey: QueryKeys.ASSESSMENT,
     queryFn: async () => {
-      const questions = await supabase.from('assessment_questions').select('*');
+      const questions = await supabase.from("assessment_questions").select("*");
 
       if (questions.error) {
         return null;
@@ -16,11 +16,11 @@ export function useGetAssessment() {
       const parsed = await assessmentSchema.safeParseAsync(questions.data);
 
       if (!parsed.success) {
-        console.log('Failed to parse assessment questions');
+        console.log("Failed to parse assessment questions");
         return null;
       }
 
       return parsed.data;
     },
-  })
+  });
 }

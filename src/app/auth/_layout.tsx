@@ -30,12 +30,15 @@ export default function AuthLayout() {
     setColorScheme(value);
   };
 
-
   return (
     <ScreenContainer edges={["bottom"]}>
       <View className="w-full flex flex-row justify-between items-center px-6 py-2">
         <Pressable onPress={toggleThemeChange}>
-          {themeMode === "dark" ? <SunIcon className="text-foreground" /> :  <MoonIcon className="text-foreground" />}
+          {themeMode === "dark" ? (
+            <SunIcon className="text-foreground" />
+          ) : (
+            <MoonIcon className="text-foreground" />
+          )}
         </Pressable>
         <Pressable
           onPress={toggleLanguage}

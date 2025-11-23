@@ -29,12 +29,15 @@ export function useGetLessons(chapterId: number) {
   });
 }
 
-
 export function useGetLesson(lessonId: string) {
   return useQuery({
     queryKey: QueryKeys.LESSON(lessonId),
     queryFn: async () => {
-      const rawLesson = await supabase.from("users_lessons_ext").select("*").eq('id', lessonId).single();
+      const rawLesson = await supabase
+        .from("users_lessons_ext")
+        .select("*")
+        .eq("id", lessonId)
+        .single();
 
       if (rawLesson.error) {
         return null;

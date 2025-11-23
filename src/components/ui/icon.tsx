@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
-import type { LucideIcon, LucideProps } from 'lucide-react-native';
-import { cssInterop } from 'nativewind';
+import { cn } from "@/lib/utils";
+import type { LucideIcon, LucideProps } from "lucide-react-native";
+import { cssInterop } from "nativewind";
 
 type IconProps = LucideProps & {
   as: LucideIcon;
@@ -13,7 +13,7 @@ function IconImplBase({ as: IconComponent, ...props }: IconProps) {
 
 cssInterop(IconImplBase, {
   className: {
-    target: 'style',
+    target: "style",
     nativeStyleToProp: {
       color: true,
       opacity: true,
@@ -43,11 +43,16 @@ const IconImpl = IconImplBase;
  * @param {number} size - Icon size (defaults to 14).
  * @param {...LucideProps} ...props - Additional Lucide icon props passed to the "as" icon.
  */
-function Icon({ as: IconComponent, className, size = 14, ...props }: IconProps) {
+function Icon({
+  as: IconComponent,
+  className,
+  size = 14,
+  ...props
+}: IconProps) {
   return (
     <IconImpl
       as={IconComponent}
-      className={cn('text-foreground', className)}
+      className={cn("text-foreground", className)}
       size={size}
       {...props}
     />

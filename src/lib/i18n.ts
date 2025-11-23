@@ -1,38 +1,42 @@
-import { getFromLocalStorage, setInLocalStorage, STORAGE_KEYS } from '@/lib/storage'
-import en from '@/locales/en.json'
-import sl from '@/locales/sl.json'
-import * as Localization from 'expo-localization'
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import {
+  getFromLocalStorage,
+  setInLocalStorage,
+  STORAGE_KEYS,
+} from "@/lib/storage";
+import en from "@/locales/en.json";
+import sl from "@/locales/sl.json";
+import * as Localization from "expo-localization";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 const resources = {
   en: { translation: en },
   sl: { translation: sl },
-}
+};
 
 const getInitialLanguage = (): string => {
-  const savedLanguage = getFromLocalStorage<string>(STORAGE_KEYS.LANGUAGE)
-  if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'sl')) {
-    return savedLanguage
+  const savedLanguage = getFromLocalStorage<string>(STORAGE_KEYS.LANGUAGE);
+  if (savedLanguage && (savedLanguage === "en" || savedLanguage === "sl")) {
+    return savedLanguage;
   }
-  const deviceLanguage = Localization.getLocales()[0]?.languageCode
-  if (deviceLanguage === 'sl') {
-    return 'sl'
+  const deviceLanguage = Localization.getLocales()[0]?.languageCode;
+  if (deviceLanguage === "sl") {
+    return "sl";
   }
-  return 'en'
-}
+  return "en";
+};
 
 i18n.use(initReactI18next).init({
   resources,
   lng: getInitialLanguage(),
-  fallbackLng: 'en',
+  fallbackLng: "en",
   interpolation: {
     escapeValue: false,
   },
-  compatibilityJSON: 'v4',
-})
+  compatibilityJSON: "v4",
+});
 
 export const changeLanguage = async (language: string) => {
-  await i18n.changeLanguage(language)
-  setInLocalStorage<string>(STORAGE_KEYS.LANGUAGE, language)
-}
+  await i18n.changeLanguage(language);
+  setInLocalStorage<string>(STORAGE_KEYS.LANGUAGE, language);
+};
