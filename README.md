@@ -2,6 +2,12 @@
 
 Mobile app built during the AdaHack hackathon.
 
+Aplikacija po registraciji, uporabnika pelje čez onboarding, kjer se mu po nekaj vprašanjih o financah določi en izmed treh nivojev znanja.
+
+Aplikacija nato glede na uporabnikov nivo znanja odklepa vsebine učenja ter nadalnje funkcionalnosti. Uporabnik ima na voljo učenje iz 3 sklopov lekcij razdeljenih po težavnosti, ki opomagajo finančni opismenosti.
+
+Po določenem doseženem nivoju znanja lahko uporabnik prične z uporabo upravljalca investicij. Ta uporabniku lahko s pomocjo algoritma predlaga v katere delnice vlagati.
+
 # Video demo
 - [Signup/Onboarding/Assessment](https://cdn.aiken.si/adahack/onboarding.mov)
 - [App Use](https://cdn.aiken.si/adahack/app-use.mov)
