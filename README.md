@@ -10,6 +10,14 @@ Mobile app built during the AdaHack hackathon.
 
 Zdravo, v primeru, da bi aplikacijo pognali localno, potrebujete iOS simulator in naložen node.js v20+.
 
+Prav tako potrebujete okoljske spremenljivke za Supabase:
+
+```
+NODE_ENV=development
+EXPO_PUBLIC_SUPABASE_URL=https://xigeuwyqyjjqwxatfoxx.supabase.co
+EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhpZ2V1d3lxeWpqcXd4YXRmb3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MjEwMTksImV4cCI6MjA3OTI5NzAxOX0.kchTgQDqVJgXjCpSpu0g3RfZsoK9XFJycWwYNgKzJdo
+```
+
 Za začetek poženite `npm install`, nato pa `npm start`
 
 V mapi `builds/` se nahaja `devbuild.tar.gz`, katerga decompressate in datoteko ki pride (.app) povlećete na simulator. Po temu v terminalu kjer ste zagnali `npm start` pritisnite `i`, in odprlo vam bo aplikacijo v simulatorju.
