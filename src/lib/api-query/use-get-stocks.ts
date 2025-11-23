@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "../supabase";
 import { QueryKeys } from "./keys";
-import { stockSchema } from "./types/stock";
+import { stockSchema, stocksSchema } from "./types/stock";
 
 export function useGetStocks() {
   return useQuery({
@@ -15,10 +15,9 @@ export function useGetStocks() {
         return null;
       }
 
-      const parsed = await stockSchema.safeParseAsync(allStocks.data);
+      const parsed = await stocksSchema.safeParseAsync(allStocks.data);
 
       if (!parsed.success) {
-        console.log("Failed to parse stocks");
         return null;
       }
 

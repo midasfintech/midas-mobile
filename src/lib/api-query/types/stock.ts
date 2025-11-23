@@ -20,3 +20,5 @@ export const stockSchema = z.object({
   ai_score: z.number().min(0).max(10),
   ai_explanation: z.string(),
 });
+
+export const stocksSchema = z.array(stockSchema);
