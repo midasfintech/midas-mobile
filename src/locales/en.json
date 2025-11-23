@@ -80,8 +80,9 @@
       "title": "We open the door to smarter financial decisions",
       "subtitle": "Change your attitude towards money: learn how investors think, how to avoid scams, and how to build something concrete from small things."
     },
-    "lessons": {
-      "title": "Lessons"
+    "chapters": {
+      "title": "Chapters",
+      "lessons": "Lessons"
     },
     "profile": {
       "title": "Profile",

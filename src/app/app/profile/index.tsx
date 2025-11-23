@@ -110,7 +110,7 @@ export default function Profile() {
   }
 
   function handleOpenSettings() {
-    router.navigate("/settings")
+    router.navigate("/app/profile/settings");
   }
 
   async function handleDeleteAccount() {

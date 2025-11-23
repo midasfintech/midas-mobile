@@ -1,13 +1,15 @@
 import { useLocalSearchParams } from "expo-router";
 
 type ChapterRouteParams = {
-  chapterId: string;
+  chapterId: number;
+  chapterName: string
 }
 
 export function useParsedChapterParams(): ChapterRouteParams {
   const params = useLocalSearchParams();
 
   return {
-    chapterId: String(params.chapterId),
+    chapterId: parseInt(String(params.chapterId), 10),
+    chapterName: String(params.chapterName),
   };
 }

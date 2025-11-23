@@ -80,8 +80,9 @@
       "title": "Odpiramo vrata k pametnejšim finančnim odločitvam",
       "subtitle": "Spremeni odnos do denarja: naulči se kako razmišljajo investitorji, kako se izogniti nategom in kako iz malega zgraditi nekaj konkretnega."
     },
-    "lessons": {
-      "title": "Lekcije"
+    "chapters": {
+      "title": "Poglavja",
+      "lessons": "Lekcije"
     },
     "profile": {
       "title": "Profil",

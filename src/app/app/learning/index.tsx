@@ -17,7 +17,7 @@ export default function LearningScreen() {
       contentContainerStyle={{ paddingBottom: insets.bottom + 80 }}
     >
       <Text className="text-3xl font-extrabold text-foreground">
-        {t("app.lessons.title")}
+        {t("app.chapters.title")}
       </Text>
 
       <View className="mt-4 gap-4">
