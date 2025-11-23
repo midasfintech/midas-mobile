@@ -2,6 +2,10 @@
 
 Mobile app built during the AdaHack hackathon.
 
+# Video demo
+- [Signup/Onboarding/Assessment](https://cdn.aiken.si/adahack/onboarding.mov)
+- [App Use](https://cdn.aiken.si/adahack/app-use.mov)
+
 # Buildi za ocenjevanje
 
 Zdravo, v primeru, da bi aplikacijo pognali localno, potrebujete iOS simulator in naložen node.js v20+.
