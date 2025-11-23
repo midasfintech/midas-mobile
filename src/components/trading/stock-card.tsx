@@ -10,7 +10,7 @@ export function StockCard({ stock }: { stock: Stock }) {
   const handleOpenLessons = () => {
     router.push({
       pathname: "/app/plan/stock",
-      params: { stockId: stock.id, stockSymbol: stock.symbol },
+      params: { symbol: stock.symbol },
     });
   };
 
@@ -24,9 +24,11 @@ export function StockCard({ stock }: { stock: Stock }) {
       )}
     >
       <View className="flex flex-row items-center justify-between">
-        <Text className="font-semibold text-lg text-primary">{stock.symbol}</Text>
+        <Text className="font-semibold text-lg text-primary">
+          {stock.symbol}
+        </Text>
         <Text className="text-muted-foreground">
-          {stock.price} {stock.financialCurrency}
+          {stock.price} {stock.currency}
         </Text>
       </View>
     </TouchableOpacity>

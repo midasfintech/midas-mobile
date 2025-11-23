@@ -25,3 +25,15 @@ export function useParsedLessonParams(): LessonRouteParams {
     lessonId: String(params.lessonId),
   };
 }
+
+type StockRouteParams = {
+  symbol: string;
+};
+
+export function useParsedStockParams(): StockRouteParams {
+  const params = useLocalSearchParams();
+
+  return {
+    symbol: String(params.symbol),
+  };
+}

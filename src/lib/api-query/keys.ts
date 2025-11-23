@@ -1,3 +1,5 @@
+import { symbol } from "zod";
+
 export const QueryKeys = {
   PROFILE: ["profile"] as const,
   SET_PROFILE: ["profile", "update"] as const,
@@ -5,4 +7,6 @@ export const QueryKeys = {
   CHAPTERS: ["chapters"] as const,
   LESSONS: (chapterId: number) => ["lessons", chapterId] as const,
   LESSON: (lessonId: string) => ["lesson", lessonId] as const,
+  STOCKS: ["stocks"] as const,
+  STOCK: (symbol: string) => ["stock", symbol] as const,
 };
