@@ -7,7 +7,7 @@ export function useGetLessons(chapterId: number) {
   return useQuery({
     queryKey: QueryKeys.LESSONS(chapterId),
     queryFn: async () => {
-      const allLessons = await supabase.from('users_lessons_ext').select('*');
+      const allLessons = await supabase.from("users_lessons_ext").select("*");
 
       if (allLessons.error) {
         return null;
@@ -16,13 +16,15 @@ export function useGetLessons(chapterId: number) {
       const parsed = await lessonsSchema.safeParseAsync(allLessons.data);
 
       if (!parsed.success) {
-        console.log('Failed to parse lessons');
+        console.log("Failed to parse lessons");
         return null;
       }
 
-      const chapterLessons = parsed.data.filter((lesson) => lesson.chapter_id === chapterId);
+      const chapterLessons = parsed.data
+        .filter((lesson) => lesson.chapter_id === chapterId)
+        .sort((a, b) => a.chapter_index - b.chapter_index);
 
       return chapterLessons;
     },
-  })
+  });
 }
