@@ -47,7 +47,7 @@ export default function SignUp() {
 
   const localizedEmploymentStatuses: Record<EmploymentStatus, string> = {
     employed: t("employmentStatus.employed"),
-    self_employed: t("employmentStatus.selfEmployed"),
+    self_employed: t("employmentStatus.self_employed"),
     unemployed: t("employmentStatus.unemployed"),
     student: t("employmentStatus.student"),
     retired: t("employmentStatus.retired"),

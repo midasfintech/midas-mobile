@@ -93,7 +93,15 @@
       "lessons": "Lekcije",
       "lesson": "Lekcija",
       "next": "Naprej",
-      "submit": "Oddaj"
+      "submit": "Oddaj",
+      "submitting": "Oddajam...",
+      "errorTitle": "Napaka",
+      "successTitle": "Uspešno",
+      "wrongAnswer": "To ni povsem pravilno. Poskusite znova!",
+      "submitError": "Ni uspelo oddati vašega odgovora. Poskusite znova.",
+      "lessonComplete": "Odlično! Zaključili ste to lekcijo.",
+      "continue": "Nadaljuj",
+      "tryAgain": "Poskusi znova"
     },
     "profile": {
       "title": "Profil",
@@ -130,7 +138,13 @@
       "next": "Naprej",
       "submit": "Oddaj",
       "submitting": "Oddajanje...",
-      "loadError": "Napaka pri nalaganju vprašanj ocenjevanja."
+      "loadError": "Napaka pri nalaganju vprašanj ocenjevanja.",
+      "errorTitle": "Napaka",
+      "successTitle": "Uspešno",
+      "submitError": "Ni uspelo oddati ocene. Poskusite znova.",
+      "networkError": "Napaka v omrežju. Preverite povezavo in poskusite znova.",
+      "assessmentComplete": "Ocenjevanje uspešno zaključeno! Vaša raven znanja je bila zabeležena.",
+      "getStarted": "Začni"
     }
   },
   "settings": {

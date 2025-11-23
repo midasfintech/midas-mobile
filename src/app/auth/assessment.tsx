@@ -9,7 +9,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ActivityIndicator, Alert, ScrollView, View } from "react-native";
 
 export default function AssessmentPage() {
   const { t } = useTranslation();
@@ -80,17 +80,33 @@ export default function AssessmentPage() {
 
       if (error) {
         console.error("Error submitting assessment:", error);
-        // TODO: Show error toast/alert
+        Alert.alert(
+          t("app.assessment.errorTitle"),
+          t("app.assessment.submitError"),
+          [{ text: "OK", style: "default" }]
+        );
+        setIsSubmitting(false);
       } else {
         console.log("Assessment submitted successfully:", data);
-        // TODO: Navigate to next screen or show success message
+        await queryClient.invalidateQueries();
+        Alert.alert(
+          t("app.assessment.successTitle"),
+          t("app.assessment.assessmentComplete"),
+          [
+            {
+              text: t("app.assessment.getStarted"),
+              onPress: () => router.replace("/app"),
+            },
+          ]
+        );
       }
     } catch (error) {
       console.error("Error submitting assessment:", error);
-      // TODO: Show error toast/alert
-    } finally {
-      queryClient.invalidateQueries();
-      router.replace("/app");
+      Alert.alert(
+        t("app.assessment.errorTitle"),
+        t("app.assessment.networkError"),
+        [{ text: "OK", style: "default" }]
+      );
       setIsSubmitting(false);
     }
   };

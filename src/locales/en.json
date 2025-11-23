@@ -91,8 +91,16 @@
       "title": "Chapters",
       "lessons": "Lessons",
       "lesson": "Lesson",
-      "next": "Naprej",
-      "submit": "Oddaj"
+      "next": "Next",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "wrongAnswer": "That's not quite right. Please try again!",
+      "submitError": "Failed to submit your answer. Please try again.",
+      "lessonComplete": "Great job! You've completed this lesson.",
+      "continue": "Continue",
+      "tryAgain": "Try Again"
     },
     "profile": {
       "title": "Profile",
@@ -129,7 +137,13 @@
       "next": "Next",
       "submit": "Submit",
       "submitting": "Submitting...",
-      "loadError": "Failed to load assessment questions."
+      "loadError": "Failed to load assessment questions.",
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "submitError": "Failed to submit assessment. Please try again.",
+      "networkError": "Network error. Please check your connection and try again.",
+      "assessmentComplete": "Assessment completed successfully! Your knowledge level has been recorded.",
+      "getStarted": "Get Started"
     }
   },
   "settings": {

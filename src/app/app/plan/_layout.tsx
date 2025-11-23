@@ -7,15 +7,7 @@ export default function LearningLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen
-          name="chapter"
-          options={{
-            headerBackButtonDisplayMode: "minimal",
-            headerBackground: () => <View className="flex-1 bg-background"></View>,
-            headerTitle: "",
-          }}
-        />
-        <Stack.Screen
-          name="lesson"
+          name="edit-portfolio"
           options={{
             headerBackButtonDisplayMode: "minimal",
             headerBackground: () => <View className="flex-1 bg-background"></View>,
