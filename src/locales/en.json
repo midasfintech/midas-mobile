@@ -78,7 +78,14 @@
   "app": {
     "home": {
       "title": "We open the door to smarter financial decisions",
-      "subtitle": "Change your attitude towards money: learn how investors think, how to avoid scams, and how to build something concrete from small things."
+      "subtitle": "Change your attitude towards money: learn how investors think, how to avoid scams, and how to build something concrete from small things.",
+      "learningTitle": "Get to know the world of finance",
+      "learningSubtitle": "Discover the basics of finance and build confident money habits.",
+      "futureTitle": "Build your future",
+      "futureSubtitle": "Learn to plan for the future and manage your money wisely.",
+      "chartTitle": "A visual representation of the growth your investments can achieve",
+      "chartStart": "Today",
+      "chartEnd": "Years"
     },
     "profile": {
       "title": "Profile",

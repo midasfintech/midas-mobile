@@ -1,11 +1,17 @@
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { Text } from '@/components/ui/text';
-import React, { useState } from 'react';
-import { View, type ViewProps, Dimensions, StyleSheet } from 'react-native';
-import { CartesianChart, Line, Bar, Area, type PointsArray } from 'victory-native';
-import { Circle, useFont } from '@shopify/react-native-skia';
-import { useSharedValue } from 'react-native-reanimated';
-import * as Haptics from 'expo-haptics';
+import { useColorScheme } from "@/hooks/use-color-scheme";
+import { Text } from "@/components/ui/text";
+import React, { useState } from "react";
+import { View, type ViewProps, Dimensions, StyleSheet } from "react-native";
+import {
+  CartesianChart,
+  Line,
+  Bar,
+  Area,
+  type PointsArray,
+} from "victory-native";
+import { Circle, useFont } from "@shopify/react-native-skia";
+import { useSharedValue } from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
 
 // Types
 export interface ChartDataPoint {
@@ -29,22 +35,26 @@ export interface ChartProps {
 // Theme colors mapping
 const useChartTheme = () => {
   const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const isDark = colorScheme === "dark";
 
   return {
-    primary: '#f0b100',
-    secondary: '#4f39f6',
-    muted: isDark ? '#24273c' : '#f5f5f5',
-    mutedForeground: isDark ? '#c7cce8' : '#737373',
-    border: isDark ? '#33353e' : '#e5e5e5',
-    background: isDark ? '#101117' : '#ffffff',
-    foreground: isDark ? '#cacddc' : '#0a0a0a',
-    grid: isDark ? 'rgba(99, 107, 174, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+    primary: "#f0b100",
+    secondary: "#4f39f6",
+    muted: isDark ? "#24273c" : "#f5f5f5",
+    mutedForeground: isDark ? "#c7cce8" : "#737373",
+    border: isDark ? "#33353e" : "#e5e5e5",
+    background: isDark ? "#101117" : "#ffffff",
+    foreground: isDark ? "#cacddc" : "#0a0a0a",
+    grid: isDark ? "rgba(99, 107, 174, 0.1)" : "rgba(0, 0, 0, 0.05)",
   };
 };
 
 // Chart Container Component
-export function ChartContainer({ children, className, ...props }: ChartContainerProps) {
+export function ChartContainer({
+  children,
+  className,
+  ...props
+}: ChartContainerProps) {
   return (
     <View className={className} {...props}>
       {children}
@@ -80,14 +90,14 @@ export function ChartLine({
   // Validate data
   if (!data || data.length === 0) {
     return (
-      <View style={{ height, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ height, justifyContent: "center", alignItems: "center" }}>
         <Text className="text-muted-foreground">No data available</Text>
       </View>
     );
   }
 
   const formattedData = data.map((point, index) => ({
-    x: typeof point.x === 'number' ? point.x : index,
+    x: typeof point.x === "number" ? point.x : index,
     y: point.y,
     label: point.x.toString(),
   }));
@@ -97,18 +107,18 @@ export function ChartLine({
       <CartesianChart
         data={formattedData}
         xKey="x"
-        yKeys={['y']}
+        padding={0}
+        yKeys={["y"]}
         axisOptions={{
           font: undefined,
           tickCount: 5,
           labelColor: theme.mutedForeground,
-          lineColor: showGrid ? theme.grid : 'transparent',
+          lineColor: showGrid ? theme.grid : "transparent",
           formatXLabel: (value) => {
             const point = data[Math.floor(value)];
-            return point ? point.x.toString() : '';
+            return point ? point.x.toString() : "";
           },
         }}
-        chartPressState={state}
       >
         {({ points, chartBounds }) => (
           <>
@@ -116,7 +126,7 @@ export function ChartLine({
               points={points.y}
               color={chartColor}
               strokeWidth={3}
-              animate={{ type: 'timing', duration: animated ? 800 : 0 }}
+              animate={{ type: "timing", duration: animated ? 800 : 0 }}
               curveType="natural"
             />
             {isActive && (
@@ -156,14 +166,14 @@ export function ChartBar({
   // Validate data
   if (!data || data.length === 0) {
     return (
-      <View style={{ height, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ height, justifyContent: "center", alignItems: "center" }}>
         <Text className="text-muted-foreground">No data available</Text>
       </View>
     );
   }
 
   const formattedData = data.map((point, index) => ({
-    x: typeof point.x === 'number' ? point.x : index,
+    x: typeof point.x === "number" ? point.x : index,
     y: point.y,
     label: point.x.toString(),
   }));
@@ -173,18 +183,17 @@ export function ChartBar({
       <CartesianChart
         data={formattedData}
         xKey="x"
-        yKeys={['y']}
+        yKeys={["y"]}
         axisOptions={{
           font: undefined,
           tickCount: 5,
           labelColor: theme.mutedForeground,
-          lineColor: showGrid ? theme.grid : 'transparent',
+          lineColor: showGrid ? theme.grid : "transparent",
           formatXLabel: (value) => {
             const point = data[Math.floor(value)];
-            return point ? point.x.toString() : '';
+            return point ? point.x.toString() : "";
           },
         }}
-        chartPressState={state}
       >
         {({ points, chartBounds }) => (
           <>
@@ -193,7 +202,7 @@ export function ChartBar({
               chartBounds={chartBounds}
               color={chartColor}
               roundedCorners={{ topLeft: 4, topRight: 4 }}
-              animate={{ type: 'timing', duration: animated ? 800 : 0 }}
+              animate={{ type: "timing", duration: animated ? 800 : 0 }}
             />
           </>
         )}
@@ -218,14 +227,14 @@ export function ChartArea({
   // Validate data
   if (!data || data.length === 0) {
     return (
-      <View style={{ height, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ height, justifyContent: "center", alignItems: "center" }}>
         <Text className="text-muted-foreground">No data available</Text>
       </View>
     );
   }
 
   const formattedData = data.map((point, index) => ({
-    x: typeof point.x === 'number' ? point.x : index,
+    x: typeof point.x === "number" ? point.x : index,
     y: point.y,
     label: point.x.toString(),
   }));
@@ -235,18 +244,17 @@ export function ChartArea({
       <CartesianChart
         data={formattedData}
         xKey="x"
-        yKeys={['y']}
+        yKeys={["y"]}
         axisOptions={{
           font: undefined,
           tickCount: 5,
           labelColor: theme.mutedForeground,
-          lineColor: showGrid ? theme.grid : 'transparent',
+          lineColor: showGrid ? theme.grid : "transparent",
           formatXLabel: (value) => {
             const point = data[Math.floor(value)];
-            return point ? point.x.toString() : '';
+            return point ? point.x.toString() : "";
           },
         }}
-        chartPressState={state}
       >
         {({ points, chartBounds }) => (
           <>
@@ -255,14 +263,14 @@ export function ChartArea({
               y0={chartBounds.bottom}
               color={chartColor}
               opacity={0.2}
-              animate={{ type: 'timing', duration: animated ? 800 : 0 }}
+              animate={{ type: "timing", duration: animated ? 800 : 0 }}
               curveType="natural"
             />
             <Line
               points={points.y}
               color={chartColor}
               strokeWidth={3}
-              animate={{ type: 'timing', duration: animated ? 800 : 0 }}
+              animate={{ type: "timing", duration: animated ? 800 : 0 }}
               curveType="natural"
             />
             {isActive && (
@@ -292,12 +300,12 @@ function useChartPressState() {
 
 const styles = StyleSheet.create({
   tooltipContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 10,
-    alignSelf: 'center',
+    alignSelf: "center",
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 8,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
   },
 });
