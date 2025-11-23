@@ -2,7 +2,14 @@ import { Button } from "@/components/ui/button";
 import { DatePickerInput } from "@/components/ui/date-picker-input";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Text } from "@/components/ui/text";
 import { supabase } from "@/lib/supabase";
 import { EmploymentStatus, EmploymentStatuses } from "@/lib/types";
@@ -25,7 +32,9 @@ export default function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const [employmentStatus, setEmploymentStatus] = useState<EmploymentStatus | "">("");
+  const [employmentStatus, setEmploymentStatus] = useState<
+    EmploymentStatus | ""
+  >("");
   const [netMonthlyIncome, setNetMonthlyIncome] = useState("");
   const [monthlyInvestmentAmount, setMonthlyInvestmentAmount] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>(undefined);
@@ -44,11 +53,13 @@ export default function SignUp() {
     retired: t("employmentStatus.retired"),
   };
 
-  const handleSelectEmploymentStatus = (value: { value: string; label: string } | undefined) => {
-      if (value?.value) {
-        setEmploymentStatus(value.value as EmploymentStatus);
-      }
+  const handleSelectEmploymentStatus = (
+    value: { value: string; label: string } | undefined,
+  ) => {
+    if (value?.value) {
+      setEmploymentStatus(value.value as EmploymentStatus);
     }
+  };
 
   async function signUpWithEmail() {
     if (password !== confirmPassword) {
@@ -71,11 +82,15 @@ export default function SignUp() {
           first_name: firstName,
           last_name: lastName,
           date_of_birth: dateOfBirth?.toISOString() || null,
-          net_monthly_income: netMonthlyIncome ? parseFloat(netMonthlyIncome) : null,
+          net_monthly_income: netMonthlyIncome
+            ? parseFloat(netMonthlyIncome)
+            : null,
           employment: employmentStatus || null,
-          monthly_investment_amount: monthlyInvestmentAmount ? parseFloat(monthlyInvestmentAmount) : null,
-        }
-      }
+          monthly_investment_amount: monthlyInvestmentAmount
+            ? parseFloat(monthlyInvestmentAmount)
+            : null,
+        },
+      },
     });
 
     if (error) {
@@ -95,28 +110,30 @@ export default function SignUp() {
   }
 
   const handleStep2 = () => {
-    if (email.length === 0 || password.length === 0 || confirmPassword.length === 0) {
-      Alert.alert(
-        t("auth.signUp.errorTitle"),
-        t("auth.signUp.fillAllFields"),
-      );
+    if (
+      email.length === 0 ||
+      password.length === 0 ||
+      confirmPassword.length === 0
+    ) {
+      Alert.alert(t("auth.signUp.errorTitle"), t("auth.signUp.fillAllFields"));
       return;
     }
 
     setStep(2);
-  }
+  };
 
   const handleStep3 = () => {
-    if (firstName.length === 0 || lastName.length === 0 || dateOfBirth === undefined) {
-      Alert.alert(
-        t("auth.signUp.errorTitle"),
-        t("auth.signUp.fillAllFields"),
-      );
+    if (
+      firstName.length === 0 ||
+      lastName.length === 0 ||
+      dateOfBirth === undefined
+    ) {
+      Alert.alert(t("auth.signUp.errorTitle"), t("auth.signUp.fillAllFields"));
       return;
     }
 
     setStep(3);
-  }
+  };
 
   const getContent = () => {
     if (step === 1) {
@@ -222,7 +239,9 @@ export default function SignUp() {
       return (
         <View className="gap-4">
           <View className="gap-2">
-            <Label nativeID="netMonthlyIncome">{t("auth.signUp.netMonthlyIncome")}</Label>
+            <Label nativeID="netMonthlyIncome">
+              {t("auth.signUp.netMonthlyIncome")}
+            </Label>
             <Input
               nativeID="netMonthlyIncome"
               placeholder={t("auth.signUp.netMonthlyIncome")}
@@ -233,21 +252,32 @@ export default function SignUp() {
           </View>
 
           <View className="gap-2">
-            <Label nativeID="employmentStatus">{t("auth.signUp.employmentStatus")}</Label>
+            <Label nativeID="employmentStatus">
+              {t("auth.signUp.employmentStatus")}
+            </Label>
             <Select
               defaultValue={{
                 value: employmentStatus,
-                label: employmentStatus !== "" ? localizedEmploymentStatuses[employmentStatus] : t("auth.signUp.selectEmploymentStatus"),
+                label:
+                  employmentStatus !== ""
+                    ? localizedEmploymentStatuses[employmentStatus]
+                    : t("auth.signUp.selectEmploymentStatus"),
               }}
               onValueChange={handleSelectEmploymentStatus}
             >
               <SelectTrigger>
-                <SelectValue placeholder={t('auth.signUp.selectEmploymentStatus')} />
+                <SelectValue
+                  placeholder={t("auth.signUp.selectEmploymentStatus")}
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   {Object.values(EmploymentStatuses).map((status) => (
-                    <SelectItem label={localizedEmploymentStatuses[status]} value={status} key={status}>
+                    <SelectItem
+                      label={localizedEmploymentStatuses[status]}
+                      value={status}
+                      key={status}
+                    >
                       {localizedEmploymentStatuses[status]}
                     </SelectItem>
                   ))}
@@ -257,7 +287,9 @@ export default function SignUp() {
           </View>
 
           <View className="gap-2">
-            <Label nativeID="monthlyInvestmentAmount">{t("auth.signUp.monthlyInvestmentAmount")}</Label>
+            <Label nativeID="monthlyInvestmentAmount">
+              {t("auth.signUp.monthlyInvestmentAmount")}
+            </Label>
             <Input
               nativeID="monthlyInvestmentAmount"
               placeholder={t("auth.signUp.monthlyInvestmentAmount")}
@@ -275,7 +307,7 @@ export default function SignUp() {
             </Text>
           </Button>
         </View>
-      )
+      );
     }
   };
 
@@ -292,8 +324,8 @@ export default function SignUp() {
           {/* Logo Section */}
           <View className="items-center mb-12">
             <Image
-              source={require("../../../assets/images/android-icon-foreground.png")}
-              className="w-24 h-24"
+              source={require("../../../assets/images/adaptive-icon.png")}
+              className="w-40 h-40"
               resizeMode="contain"
             />
             <Text variant="h1" className="mt-4 mb-2">

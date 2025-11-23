@@ -1,18 +1,25 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Text } from '@/components/ui/text';
-import { supabase } from '@/lib/supabase';
-import { Link, useRouter } from 'expo-router';
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Text } from "@/components/ui/text";
+import { supabase } from "@/lib/supabase";
+import { Link, useRouter } from "expo-router";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  Alert,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  View,
+} from "react-native";
 
 export default function SignIn() {
   const { t } = useTranslation();
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function signInWithEmail() {
@@ -23,16 +30,16 @@ export default function SignIn() {
     });
 
     if (error) {
-      Alert.alert(t('auth.signIn.errorTitle'), error.message);
+      Alert.alert(t("auth.signIn.errorTitle"), error.message);
     } else {
-      router.replace('/app');
+      router.replace("/app");
     }
     setLoading(false);
   }
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
       className="flex-1"
     >
       <ScrollView
@@ -43,25 +50,25 @@ export default function SignIn() {
           {/* Logo Section */}
           <View className="items-center mb-12">
             <Image
-              source={require('../../../assets/images/android-icon-foreground.png')}
-              className="w-24 h-24"
+              source={require("../../../assets/images/adaptive-icon.png")}
+              className="w-40 h-40"
               resizeMode="contain"
             />
             <Text variant="h1" className="mt-4 mb-2">
-              {t('auth.signIn.title')}
+              {t("auth.signIn.title")}
             </Text>
             <Text variant="muted" className="text-center">
-              {t('auth.signIn.subtitle')}
+              {t("auth.signIn.subtitle")}
             </Text>
           </View>
 
           {/* Form Section */}
           <View className="gap-4">
             <View className="gap-2">
-              <Label nativeID="email">{t('auth.signIn.email')}</Label>
+              <Label nativeID="email">{t("auth.signIn.email")}</Label>
               <Input
                 nativeID="email"
-                placeholder={t('auth.signIn.emailPlaceholder')}
+                placeholder={t("auth.signIn.emailPlaceholder")}
                 value={email}
                 onChangeText={setEmail}
                 autoCapitalize="none"
@@ -71,10 +78,10 @@ export default function SignIn() {
             </View>
 
             <View className="gap-2">
-              <Label nativeID="password">{t('auth.signIn.password')}</Label>
+              <Label nativeID="password">{t("auth.signIn.password")}</Label>
               <Input
                 nativeID="password"
-                placeholder={t('auth.signIn.passwordPlaceholder')}
+                placeholder={t("auth.signIn.passwordPlaceholder")}
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
@@ -89,7 +96,9 @@ export default function SignIn() {
               className="mt-2"
             >
               <Text className="text-primary-foreground font-semibold">
-                {loading ? t('auth.signIn.signingIn') : t('auth.signIn.signInButton')}
+                {loading
+                  ? t("auth.signIn.signingIn")
+                  : t("auth.signIn.signInButton")}
               </Text>
             </Button>
           </View>
@@ -97,9 +106,11 @@ export default function SignIn() {
           {/* Footer Section */}
           <View className="mt-8 items-center">
             <Text variant="muted">
-              {t('auth.signIn.noAccount')}{' '}
+              {t("auth.signIn.noAccount")}{" "}
               <Link href="/auth/sign-up">
-                <Text className="text-primary font-semibold">{t('auth.signIn.signUpLink')}</Text>
+                <Text className="text-primary font-semibold">
+                  {t("auth.signIn.signUpLink")}
+                </Text>
               </Link>
             </Text>
           </View>

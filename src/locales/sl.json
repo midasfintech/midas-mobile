@@ -78,7 +78,15 @@
   "app": {
     "home": {
       "title": "Odpiramo vrata k pametnejšim finančnim odločitvam",
-      "subtitle": "Spremeni odnos do denarja: naulči se kako razmišljajo investitorji, kako se izogniti nategom in kako iz malega zgraditi nekaj konkretnega."
+      "subtitle": "Spremeni odnos do denarja: naulči se kako razmišljajo investitorji, kako se izogniti nategom in kako iz malega zgraditi nekaj konkretnega.",
+      "learningTitle": "Spoznaj se s svetom financ",
+      "learningSubtitle": "Odkrij osnove financ in zgradi samozavestne denarne navade.",
+      "futureTitle": "Zgradi svojo prihodnost",
+      "futureSubtitle": "Nauči se načrtovati prihodnost in pametno upravljati svoj denar.",
+      "chartTitle": "Vizualni prikaz rasti, ki jo lahko dosežejo vaše naložbe",
+      "chartStart": "Danes",
+      "chartEnd": "Let"
+
     },
     "chapters": {
       "title": "Poglavja",
