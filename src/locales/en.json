@@ -161,7 +161,8 @@
       "percentageError": "Percentages must add up to 100%",
       "saveSuccess": "Portfolio updated successfully",
       "saveError": "Failed to save portfolio",
-      "successTitle": "Success"
+      "successTitle": "Success",
+      "myStock": "My Stock"
     }
   },
   "settings": {

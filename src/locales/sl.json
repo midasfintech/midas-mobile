@@ -161,7 +161,8 @@
       "percentageError": "Odstotki se morajo sešteti v 100%",
       "saveSuccess": "Portfolio uspešno posodobljen",
       "saveError": "Neuspešno shranjevanje portfelja",
-      "successTitle": "Uspešno"
+      "successTitle": "Uspešno",
+      "myStock": "Moje delnice"
     }
   },
   "settings": {

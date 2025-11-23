@@ -26,9 +26,9 @@ export default function PlanScreen() {
   };
 
   const tempPieData = [
-    { value: 35, color: "#fdc700" },
-    { value: 25, color: "#7c86ff" },
-    { value: 40, color: "#96f7e4" },
+    { value: 33, color: "#fdc700" },
+    { value: 33, color: "#7c86ff" },
+    { value: 34, color: "#96f7e4" },
   ];
 
   return (
@@ -71,7 +71,9 @@ export default function PlanScreen() {
           </View>
         </View>
       </View>
+
       <View className="gap-2">
+        <Text className="mb-1 font-bold text-lg">{t("app.plan.myStock")}</Text>
         {stocks?.map((stock: Stock) => (
           <StockCard key={stock.symbol} stock={stock} />
         ))}
