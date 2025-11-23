@@ -82,7 +82,10 @@
     },
     "chapters": {
       "title": "Chapters",
-      "lessons": "Lessons"
+      "lessons": "Lessons",
+      "lesson": "Lesson",
+      "next": "Naprej",
+      "submit": "Oddaj"
     },
     "profile": {
       "title": "Profile",

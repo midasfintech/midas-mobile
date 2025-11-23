@@ -17,11 +17,13 @@ import { useRouter } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView, View, Pressable } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Settings() {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const { themeMode, setColorScheme } = useTheme();
+  const insets = useSafeAreaInsets();
 
   const [selectedLanguage, setSelectedLanguage] = useState<Option>({
     value: i18n.language,
@@ -50,7 +52,10 @@ export default function Settings() {
   };
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView
+      className="flex-1 bg-background"
+      contentContainerStyle={{ paddingBottom: insets.bottom + 80 }}
+    >
       <View className="px-6 py-6 gap-6">
         {/* Header with Back Button */}
         <View className="flex-row items-center gap-4">

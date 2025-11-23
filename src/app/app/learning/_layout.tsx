@@ -1,4 +1,5 @@
 import { Stack } from "expo-router";
+import { View } from "react-native";
 
 export default function LearningLayout() {
   return (
@@ -10,6 +11,14 @@ export default function LearningLayout() {
           options={{
             headerBackButtonDisplayMode: "minimal",
             headerBackground: () => null,
+            headerTitle: "",
+          }}
+        />
+        <Stack.Screen
+          name="lesson"
+          options={{
+            headerBackButtonDisplayMode: "minimal",
+            headerBackground: () => <View className="flex-1 bg-background"></View>,
             headerTitle: "",
           }}
         />

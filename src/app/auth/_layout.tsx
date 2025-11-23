@@ -2,7 +2,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { Text } from "@/components/ui/text";
 import { ColorScheme, useColorScheme } from "@/hooks/use-color-scheme";
 import { changeLanguage } from "@/lib/i18n";
-import { SunIcon } from "@/lib/icons";
+import { MoonIcon, SunIcon } from "@/lib/icons";
 import { Stack } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { Pressable, View } from "react-native";
@@ -30,11 +30,12 @@ export default function AuthLayout() {
     setColorScheme(value);
   };
 
+
   return (
     <ScreenContainer edges={["bottom"]}>
       <View className="w-full flex flex-row justify-between items-center px-6 py-2">
         <Pressable onPress={toggleThemeChange}>
-          <SunIcon className="text-foreground" />
+          {themeMode === "dark" ? <SunIcon className="text-foreground" /> :  <MoonIcon className="text-foreground" />}
         </Pressable>
         <Pressable
           onPress={toggleLanguage}

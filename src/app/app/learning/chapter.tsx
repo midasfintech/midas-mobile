@@ -1,4 +1,4 @@
-import { useParsedChapterParams } from "@/hooks/use-parsed-chapter-params";
+import { useParsedChapterParams } from "@/hooks/use-parsed-params";
 import { ScrollView, View } from "react-native";
 import { Text } from "@/components/ui/text";
 import { useSafeAreaInsets } from "react-native-safe-area-context";

@@ -18,7 +18,6 @@ export function ChapterCard({ chapter }: { chapter: Chapter }) {
   };
 
   const handleOpenLessons = () => {
-    console.log("Opening chapter:", chapter.id);
     router.push({
       pathname: "/app/learning/chapter",
       params: { chapterId: chapter.id, chapterName: chapter.title },

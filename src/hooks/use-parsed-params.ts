@@ -13,3 +13,15 @@ export function useParsedChapterParams(): ChapterRouteParams {
     chapterName: String(params.chapterName),
   };
 }
+
+type LessonRouteParams = {
+  lessonId: string;
+}
+
+export function useParsedLessonParams(): LessonRouteParams {
+  const params = useLocalSearchParams();
+
+  return {
+    lessonId: String(params.lessonId),
+  };
+}

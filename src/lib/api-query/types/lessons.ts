@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export type Lesson = z.infer<typeof lessonSchema>;
-const lessonSchema = z.object({
+export const lessonSchema = z.object({
   id: z.string(),
   title: z.string(),
   description: z.string(),

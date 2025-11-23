@@ -82,7 +82,10 @@
     },
     "chapters": {
       "title": "Poglavja",
-      "lessons": "Lekcije"
+      "lessons": "Lekcije",
+      "lesson": "Lekcija",
+      "next": "Naprej",
+      "submit": "Oddaj"
     },
     "profile": {
       "title": "Profil",

@@ -9,9 +9,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Stack, usePathname } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import '../global.css';
+import { cn } from '@/lib/utils';
 
 export default function RootLayout() {
   return (
@@ -37,22 +39,23 @@ function RootLayoutContent() {
   const bgColor = pathname === "/app" ? "bg-primary" : "bg-background";
 
   return (
-    <SafeAreaProvider style={{ flex: 1 }}>
-      <NavThemeProvider value={NAV_THEME[effectiveColorScheme]}>
-        <AuthProvider>
-          <QueryClientProvider client={queryClient}>
-            <View style={{ flex: 1 }} className={effectiveColorScheme === 'dark' ? `dark ${bgColor}` : bgColor}>
-              <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="app" />
-                <Stack.Screen name="auth" />
-                <Stack.Screen name="settings" />
-              </Stack>
-              <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />
-              <PortalHost />
-            </View>
-          </QueryClientProvider>
-        </AuthProvider>
-      </NavThemeProvider>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider style={{ flex: 1 }}>
+        <NavThemeProvider value={NAV_THEME[effectiveColorScheme]}>
+          <AuthProvider>
+            <QueryClientProvider client={queryClient}>
+              <View style={{ flex: 1 }} className={cn(bgColor, effectiveColorScheme === 'dark' ? `dark ${bgColor}` : bgColor)}>
+                <Stack screenOptions={{ headerShown: false }}>
+                  <Stack.Screen name="app" />
+                  <Stack.Screen name="auth" />
+                </Stack>
+                <StatusBar style={effectiveColorScheme === "dark" ? "light" : "dark"} translucent backgroundColor="transparent" />
+                <PortalHost />
+              </View>
+            </QueryClientProvider>
+          </AuthProvider>
+        </NavThemeProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
