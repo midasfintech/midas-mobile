@@ -36,7 +36,9 @@ export default function EditPortfolio() {
 
   useEffect(() => {
     if (userData?.data) {
-      setMonthlyAmount(userData.data.monthly_investment_amount?.toString() || "");
+      setMonthlyAmount(
+        userData.data.monthly_investment_amount?.toString() || "",
+      );
       // TODO: Load portfolio allocation from database
       // For now using default values
     }
@@ -48,15 +50,21 @@ export default function EditPortfolio() {
 
   const adjustSliders = (
     changedSlider: "savings" | "etf" | "stocks",
-    newValue: number
+    newValue: number,
   ) => {
     const roundedValue = Math.round(newValue);
     const currentTotal = savings + etf + stocks;
-    const difference = roundedValue - (changedSlider === "savings" ? savings : changedSlider === "etf" ? etf : stocks);
+    const difference =
+      roundedValue -
+      (changedSlider === "savings"
+        ? savings
+        : changedSlider === "etf"
+        ? etf
+        : stocks);
 
     // Get unlocked sliders (excluding the one being changed)
     const unlockedSliders = (["savings", "etf", "stocks"] as const).filter(
-      (s) => s !== changedSlider && !lockedSliders[s]
+      (s) => s !== changedSlider && !lockedSliders[s],
     );
 
     if (unlockedSliders.length === 0) {
@@ -81,7 +89,7 @@ export default function EditPortfolio() {
     unlockedSliders.forEach((slider) => {
       newValues[slider] = Math.max(
         0,
-        Math.min(100, Math.round(newValues[slider] + adjustmentPerSlider))
+        Math.min(100, Math.round(newValues[slider] + adjustmentPerSlider)),
       );
     });
 
@@ -102,10 +110,7 @@ export default function EditPortfolio() {
 
     const total = savings + etf + stocks;
     if (total !== 100) {
-      Alert.alert(
-        t("app.plan.errorTitle"),
-        t("app.plan.percentageError")
-      );
+      Alert.alert(t("app.plan.errorTitle"), t("app.plan.percentageError"));
       return;
     }
 
@@ -123,18 +128,13 @@ export default function EditPortfolio() {
         Alert.alert(t("app.plan.errorTitle"), error.message);
       } else {
         await queryClient.invalidateQueries();
-        Alert.alert(
-          t("app.plan.successTitle"),
-          t("app.plan.saveSuccess"),
-          [{ text: "OK", onPress: () => router.back() }]
-        );
+        Alert.alert(t("app.plan.successTitle"), t("app.plan.saveSuccess"), [
+          { text: "OK", onPress: () => router.back() },
+        ]);
       }
     } catch (error) {
       console.error("Error saving portfolio:", error);
-      Alert.alert(
-        t("app.plan.errorTitle"),
-        t("app.plan.saveError")
-      );
+      Alert.alert(t("app.plan.errorTitle"), t("app.plan.saveError"));
     } finally {
       setIsSaving(false);
     }
@@ -266,9 +266,7 @@ export default function EditPortfolio() {
             <View className="flex-row items-center justify-between">
               <Label>{t("app.plan.stocks")}</Label>
               <View className="flex-row items-center gap-2">
-                <Text className="text-sm text-muted-foreground">
-                  {stocks}%
-                </Text>
+                <Text className="text-sm text-muted-foreground">{stocks}%</Text>
                 <Pressable onPress={() => toggleLock("stocks")}>
                   <Icon
                     as={LockIcon}
