@@ -6,5 +6,6 @@ export { ChevronUpIcon } from "./chevron-up";
 export { LockIcon } from "./lock";
 export { MailIcon } from "./mail";
 export { MoonIcon } from "./moon";
+export { PenIcon } from "./pen";
 export { SettingsIcon } from "./settings";
 export { SunIcon } from "./sun";

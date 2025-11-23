@@ -144,6 +144,24 @@
       "networkError": "Napaka v omrežju. Preverite povezavo in poskusite znova.",
       "assessmentComplete": "Ocenjevanje uspešno zaključeno! Vaša raven znanja je bila zabeležena.",
       "getStarted": "Začni"
+    },
+    "plan": {
+      "title": "Portfolio",
+      "editTitle": "Uredi Portfolio",
+      "monthlyInvestment": "Mesečna Naložba",
+      "amount": "Znesek",
+      "allocation": "Razporeditev Portfelja",
+      "savings": "Varčevalni račun",
+      "etf": "ETF",
+      "stocks": "Delnice",
+      "saveChanges": "Shrani Spremembe",
+      "saving": "Shranjevanje...",
+      "cancel": "Prekliči",
+      "errorTitle": "Napaka",
+      "percentageError": "Odstotki se morajo sešteti v 100%",
+      "saveSuccess": "Portfolio uspešno posodobljen",
+      "saveError": "Neuspešno shranjevanje portfelja",
+      "successTitle": "Uspešno"
     }
   },
   "settings": {
