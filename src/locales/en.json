@@ -144,6 +144,24 @@
       "networkError": "Network error. Please check your connection and try again.",
       "assessmentComplete": "Assessment completed successfully! Your knowledge level has been recorded.",
       "getStarted": "Get Started"
+    },
+    "plan": {
+      "title": "Portfolio",
+      "editTitle": "Edit Portfolio",
+      "monthlyInvestment": "Monthly Investment",
+      "amount": "Amount",
+      "allocation": "Portfolio Allocation",
+      "savings": "Savings",
+      "etf": "ETF",
+      "stocks": "Stocks",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "errorTitle": "Error",
+      "percentageError": "Percentages must add up to 100%",
+      "saveSuccess": "Portfolio updated successfully",
+      "saveError": "Failed to save portfolio",
+      "successTitle": "Success"
     }
   },
   "settings": {
