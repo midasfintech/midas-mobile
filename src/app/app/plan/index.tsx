@@ -67,7 +67,7 @@ export default function PlanScreen() {
 
           <View className="flex flex-row items-center justify-start gap-4">
             <View className="bg-[#96f7e4] h-4 w-4 rounded-sm"></View>
-            <Text>{t("app.plan.savings")}</Text>
+            <Text>{t("app.plan.stocks")}</Text>
           </View>
         </View>
       </View>
