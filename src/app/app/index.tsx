@@ -9,6 +9,7 @@ import { ScrollView, View } from "react-native";
 import { ChartLineIcon } from "@/lib/icons/chart";
 import { ChartLine } from "@/components/ui/chart";
 
+
 export default function AppHome() {
   const { t } = useTranslation();
   const { session } = useAuthContext();

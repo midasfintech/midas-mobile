@@ -2,6 +2,15 @@
 
 Mobile app built during the AdaHack hackathon.
 
+# Buildi za ocenjevanje
+
+Zdravo, v primeru, da bi aplikacijo pognali localno, potrebujete iOS simulator in naložen node.js v20+.
+
+Za začetek poženite `npm install`, nato pa `npm start`
+
+V mapi `builds/` se nahaja `devbuild.tar.gz`, katerga decompressate in datoteko ki pride (.app) povlećete na simulator. Po temu v terminalu kjer ste zagnali `npm start` pritisnite `i`, in odprlo vam bo aplikacijo v simulatorju.
+
+
 ## 📁 Project Structure
 
 ```

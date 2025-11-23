@@ -17,7 +17,7 @@ export const stockSchema = z.object({
   market_cap: z.number(),
   dividend_yield: z.number().nullable(),
   price_history: z.array(monthlyPriceSchema),
-  ai_score: z.number().min(0).max(10),
+  ai_score: z.number(),
   ai_explanation: z.string(),
 });
 

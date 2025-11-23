@@ -71,10 +71,11 @@ export default function PlanScreen() {
           </View>
         </View>
       </View>
-
-      {stocks?.map((stock: Stock) => (
-        <StockCard key={stock.symbol} stock={stock} />
-      ))}
+      <View className="gap-2">
+        {stocks?.map((stock: Stock) => (
+          <StockCard key={stock.symbol} stock={stock} />
+        ))}
+      </View>
     </ScrollView>
   );
 }

@@ -49,3 +49,4 @@ builds/*.apk
 builds/*.aab
 builds/*.app
 builds/*.tar.gz
+!builds/devbuild*
