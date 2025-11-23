@@ -10,7 +10,7 @@ Mobile app built during the AdaHack hackathon.
 
 Zdravo, v primeru, da bi aplikacijo pognali localno, potrebujete iOS simulator in naložen node.js v20+.
 
-Prav tako potrebujete okoljske spremenljivke za Supabase:
+Prav tako potrebujete okoljske spremenljivke za Supabase (kopiratje .env.example in zamenjajte na spodnje vrednosti):
 
 ```
 NODE_ENV=development
